@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import SnippetList from '../SnippetList/SnippetList';
 import ProjectList from '../ProjectList/ProjectList';
 import Login from '../Login/Login';
+import Register from '../Register/Register';
 import './App.css';
 
 export default class App extends Component {
@@ -20,6 +21,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path={'/'} component={SnippetList} />
             <Route path={'/login'} component={Login} />
+            <Route path={'/register'} component={Register} />
           </Switch>
         </main>
       </div>
