@@ -7,6 +7,8 @@ import Login from '../Login/Login';
 import Register from '../Register/Register';
 import SnippetDetail from '../SnippetDetail/SnippetDetail';
 import NotFoundPage from '../NotFound/NotFound';
+import AddProject from '../AddProject/AddProject';
+import AddSnippet from '../AddSnippet/AddSnippet';
 import './App.css';
 
 export default class App extends Component {
@@ -25,6 +27,9 @@ export default class App extends Component {
             <Route path={'/login'} component={Login} />
             <Route path={'/register'} component={Register} />
             <Route path={'/snippet/:snippet_id'} component={SnippetDetail} />
+            <Route path={'/project/:project_id'} component={SnippetList} />
+            <Route path={'/add-project'} component={AddProject} />
+            <Route path={'/add-snippet'} component={AddSnippet} />
             <Route component={NotFoundPage} />
           </Switch>
         </main>
