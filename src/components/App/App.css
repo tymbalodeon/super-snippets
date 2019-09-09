@@ -1,8 +1,6 @@
 .App {
   display: flex;
   justify-content: space-between;
-  height: 100vh;
-  background-color: sandybrown;
 }
 
 .App__projects {
