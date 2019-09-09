@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-// import { Route, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import SnippetList from '../SnippetList/SnippetList';
 import ProjectList from '../ProjectList/ProjectList';
+import Login from '../Login/Login';
 import './App.css';
 
 export default class App extends Component {
@@ -16,9 +17,10 @@ export default class App extends Component {
           <header>
             <Header />
           </header>
-          <div className="App__snippet-list">
-            <SnippetList />
-          </div>
+          <Switch>
+            <Route exact path={'/'} component={SnippetList} />
+            <Route path={'/login'} component={Login} />
+          </Switch>
         </main>
       </div>
     );
