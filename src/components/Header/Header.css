@@ -1,0 +1,14 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header a {
+  color: #444;
+  text-decoration: none;
+}
+
+.Header__not-logged-in a {
+  padding: 10px;
+}
