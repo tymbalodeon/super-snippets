@@ -38,21 +38,11 @@ export default class ProjectList extends Component {
           ))}
         </ul>
         <div className="ProjectList__button-wrapper">
-          <button
-            tag={Link}
-            to="/add-project"
-            type="button"
-            className="ProjectList__add-project-button"
-          >
-            Create Project
+          <button className="ProjectList__add-project-button">
+            <Link to="/add-project">Create Project</Link>
           </button>
-          <button
-            tag={Link}
-            to="/add-project"
-            type="button"
-            className="ProjectList__add-project-button"
-          >
-            Create Snippet
+          <button className="ProjectList__add-snippet-button">
+            <Link to="/add-snippet"> Create Snippet</Link>
           </button>
         </div>
       </div>

@@ -5,6 +5,8 @@ import SnippetList from '../SnippetList/SnippetList';
 import ProjectList from '../ProjectList/ProjectList';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
+import SnippetDetail from '../SnippetDetail/SnippetDetail';
+import NotFoundPage from '../NotFound/NotFound';
 import './App.css';
 
 export default class App extends Component {
@@ -22,6 +24,8 @@ export default class App extends Component {
             <Route exact path={'/'} component={SnippetList} />
             <Route path={'/login'} component={Login} />
             <Route path={'/register'} component={Register} />
+            <Route path={'/snippet/:snippet_id'} component={SnippetDetail} />
+            <Route component={NotFoundPage} />
           </Switch>
         </main>
       </div>
