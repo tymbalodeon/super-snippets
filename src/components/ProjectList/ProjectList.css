@@ -1,0 +1,9 @@
+button {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  text-align: right;
+  margin: 0;
+}
