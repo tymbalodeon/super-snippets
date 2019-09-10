@@ -1,3 +1,3 @@
 export default {
-  API_ENDPOINT: 'https://[TBD].herokuapp.com/api'
+  API_ENDPOINT: 'https://desolate-anchorage-33266.herokuapp.com/api'
 };
