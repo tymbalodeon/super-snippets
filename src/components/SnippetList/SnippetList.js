@@ -5,6 +5,7 @@ import './SnippetList.css';
 export default class List extends Component {
   state = {
     snippets: [],
+    project_id: null,
     error: null
   };
 
@@ -15,8 +16,12 @@ export default class List extends Component {
   }
 
   renderSnippets() {
-    const { snippets } = this.state;
-    return snippets.map(snippet => (
+    const { snippets, project_id } = this.state;
+    let finalList = snippets;
+    if (project_id) {
+      finalList = snippets.filter(snippet => snippet.project_id === project_id);
+    }
+    return finalList.map(snippet => (
       <Snippet key={snippet.id} snippet={snippet} />
     ));
   }
@@ -34,3 +39,7 @@ export default class List extends Component {
     );
   }
 }
+
+// client side validation rather than server
+// loading sign for registration and login
+// remove register and create log out for logged in state
