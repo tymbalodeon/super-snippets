@@ -10,7 +10,7 @@ export default class AddProject extends Component {
       .then(() => {
         title.value = '';
       })
-      .catch(this.context.setError);
+      .catch(error => this.setState({ error }));
   };
 
   render() {
