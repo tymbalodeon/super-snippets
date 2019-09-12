@@ -1,35 +1,35 @@
 import React, { Component } from 'react';
 import Snippet from '../Snippet/Snippet';
+import SnippetApiService from '../../services/snippet-api-service';
 import './SnippetList.css';
-
-const snippetList = [
-  {
-    id: 1,
-    snippet_name: 'Additive Synth',
-    content: 'This synth adds a bunch of sine waves together.',
-    project_id: 1
-  },
-  {
-    id: 2,
-    snippet_name: 'Subtractive Synth',
-    content: 'This synth applies a resonant filter to pink noise.',
-    project_id: 2
-  },
-  {
-    id: 3,
-    snippet_name: 'Stochastic Synth',
-    content: 'This synth uses randomness.',
-    project_id: 1
-  }
-];
-
 export default class List extends Component {
+  state = {
+    snippets: [],
+    error: null
+  };
+
+  componentDidMount() {
+    SnippetApiService.getSnippets()
+      .then(res => this.setState({ snippets: res }))
+      .catch(err => this.setState({ err }));
+  }
+
+  renderSnippets() {
+    const { snippets } = this.state;
+    return snippets.map(snippet => (
+      <Snippet key={snippet.id} snippet={snippet} />
+    ));
+  }
+
   render() {
+    const { error } = this.state;
     return (
       <div className="SnippetList">
-        {snippetList.map(snippet => (
-          <Snippet key={snippet.id} snippet={snippet} />
-        ))}
+        {error ? (
+          <p className="red">There was an error, try again</p>
+        ) : (
+          this.renderSnippets()
+        )}
       </div>
     );
   }
