@@ -10,7 +10,7 @@ const SnippetApiService = {
     );
   },
   getSnippet(snippet_id) {
-    return fetch(`${config.API_ENDPOINT}/snippet/${snippet_id}`, {
+    return fetch(`${config.API_ENDPOINT}/snippets/${snippet_id}`, {
       headers: {
         authorization: `bearer ${TokenService.getAuthToken()}`
       }
@@ -28,7 +28,7 @@ const SnippetApiService = {
     );
   },
   getProject(project_id) {
-    return fetch(`${config.API_ENDPOINT}/snippet/${project_id}`, {
+    return fetch(`${config.API_ENDPOINT}/projects/${project_id}`, {
       headers: {
         authorization: `bearer ${TokenService.getAuthToken()}`
       }

@@ -8,7 +8,7 @@ export default class Snippet extends Component {
 
     return (
       <div className="Snippet_wrapper">
-        <Link to={`/snippet/${snippet.id}`} className="Snippet">
+        <Link to={`/snippet/${snippet.id}`}>
           <div className="Snippet__details">
             <div className="Snippet__text">
               <h2 className="Snippet__heading">{snippet.snippet_name}</h2>

@@ -1,32 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import SnippetApiService from '../../services/snippet-api-service';
 import './SnippetDetail.css';
 
-const snippetList = [
-  {
-    id: 1,
-    snippet_name: 'Additive Synth',
-    content: 'This synth adds a bunch of sine waves together.',
-    project_id: 1
-  },
-  {
-    id: 2,
-    snippet_name: 'Subtractive Synth',
-    content: 'This synth applies a resonant filter to pink noise.',
-    project_id: 2
-  },
-  {
-    id: 3,
-    snippet_name: 'Stochastic Synth',
-    content: 'This synth uses randomness.',
-    project_id: 1
-  }
-];
-
 export default class SnippetDetail extends Component {
-  render() {
-    const snippet = snippetList[0];
+  state = {
+    snippet: {}
+  };
 
+  componentDidMount() {
+    const { snippet_id } = this.props.match.params;
+    const id = Number(snippet_id);
+    SnippetApiService.getSnippet(id).then(res =>
+      this.setState({ snippet: res })
+    );
+  }
+
+  render() {
+    const { snippet } = this.state;
     return (
       <div className="Snippet_wrapper">
         <div className="Snippet__details">
