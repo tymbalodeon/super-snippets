@@ -19,7 +19,6 @@ export default class App extends Component {
       snippets: [],
       projects: [],
       project_id: null,
-      snippet: null,
       error: null
     };
   }

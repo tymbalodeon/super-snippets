@@ -27,6 +27,7 @@ export default class Login extends Component {
         TokenService.saveAuthToken(res.authToken);
         this.handleLoginSuccess();
       })
+      .then(() => this.props.history.push('/'))
       .catch(res => {
         this.setState({ error: res.error });
       });
