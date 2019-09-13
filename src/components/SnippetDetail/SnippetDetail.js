@@ -9,21 +9,19 @@ export default class SnippetDetail extends Component {
   };
 
   componentDidMount() {
-    const { snippet_id } = this.props.match.params;
-    const id = Number(snippet_id);
-    SnippetApiService.getSnippet(id).then(res =>
-      this.setState({ snippet: res })
+    SnippetApiService.getSnippet(this.props.match.params.snippet_id).then(
+      snippet => this.setState({ snippet })
     );
   }
-
   render() {
-    const { snippet } = this.state;
     return (
       <div className="Snippet_wrapper">
         <div className="Snippet__details">
           <div className="Snippet__text">
-            <h2 className="Snippet__heading">{snippet.snippet_name}</h2>
-            <p className="Snippet__description">{snippet.content}</p>
+            <h2 className="Snippet__heading">
+              {this.state.snippet.snippet_name}
+            </h2>
+            <p className="Snippet__description">{this.state.snippet.content}</p>
           </div>
         </div>
         <button>

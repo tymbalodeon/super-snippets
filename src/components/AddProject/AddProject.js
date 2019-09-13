@@ -6,7 +6,6 @@ export default class AddProject extends Component {
     e.preventDefault();
     const { title } = e.target;
     SnippetApiService.postProject(title.value)
-      // .then(this.context.addProject)
       .then(() => {
         title.value = '';
       })

@@ -5,7 +5,6 @@ import './Snippet.css';
 export default class Snippet extends Component {
   render() {
     const { snippet } = this.props;
-
     return (
       <div className="Snippet_wrapper">
         <Link to={`/snippet/${snippet.id}`}>

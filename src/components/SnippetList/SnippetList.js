@@ -3,14 +3,17 @@ import Snippet from '../Snippet/Snippet';
 import './SnippetList.css';
 export default class List extends Component {
   renderSnippets() {
-    const { snippets } = this.props;
-    const { project_id } = this.props;
+    const { snippets, project_id, updateSnippetId } = this.props;
     let finalList = snippets;
     if (project_id) {
       finalList = snippets.filter(snippet => snippet.project_id === project_id);
     }
     return finalList.map(snippet => (
-      <Snippet key={snippet.id} snippet={snippet} />
+      <Snippet
+        key={snippet.id}
+        snippet={snippet}
+        updateSnippetId={updateSnippetId}
+      />
     ));
   }
 

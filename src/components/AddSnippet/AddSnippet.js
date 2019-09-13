@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import SnippetApiService from '../../services/snippet-api-service';
 
 export default class AddSnippet extends Component {
-  state = {
-    projects: [],
-    error: null
-  };
-
   handleSubmit = e => {
     e.preventDefault();
     const { title, info, content, project_id } = e.target;
@@ -18,7 +13,6 @@ export default class AddSnippet extends Component {
       user_id: 1
     };
     SnippetApiService.postSnippet(newSnippet)
-      // .then(this.context.addSnippet)
       .then(() => {
         title.value = '';
         info.value = '';
@@ -35,7 +29,7 @@ export default class AddSnippet extends Component {
   }
 
   render() {
-    const { projects, error } = this.state;
+    const { projects, error } = this.props;
     return (
       <section className="AddSnippet">
         <h2>Create a snippet</h2>

@@ -25,11 +25,14 @@ class Header extends Component {
   }
 
   render() {
+    const { updateProjectId } = this.props;
     return (
       <>
         <nav className="Header">
           <h1>
-            <Link to="/">SuperSnippets</Link>
+            <Link to="/" onClick={() => updateProjectId()}>
+              SuperSnippets
+            </Link>
           </h1>
           <span className="Header__tagline--wide">Collide all the things.</span>
           {this.renderLoginLink()}
