@@ -5,7 +5,6 @@ import './SnippetList.css';
 export default class List extends Component {
   state = {
     snippets: [],
-    project_id: null,
     error: null
   };
 
@@ -16,7 +15,8 @@ export default class List extends Component {
   }
 
   renderSnippets() {
-    const { snippets, project_id } = this.state;
+    const { snippets } = this.state;
+    const { project_id } = this.props.match.params;
     let finalList = snippets;
     if (project_id) {
       finalList = snippets.filter(snippet => snippet.project_id === project_id);
