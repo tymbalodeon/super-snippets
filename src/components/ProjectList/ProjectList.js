@@ -12,7 +12,7 @@ export default class ProjectList extends Component {
   componentDidMount() {
     SnippetApiService.getProjects()
       .then(res => this.setState({ projects: res }))
-      .catch(err => this.setState({ err }));
+      .catch(error => this.setState({ error }));
   }
 
   renderProjects() {

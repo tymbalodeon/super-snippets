@@ -11,7 +11,7 @@ export default class List extends Component {
   componentDidMount() {
     SnippetApiService.getSnippets()
       .then(res => this.setState({ snippets: res }))
-      .catch(err => this.setState({ err }));
+      .catch(error => this.setState({ error }));
   }
 
   renderSnippets() {
