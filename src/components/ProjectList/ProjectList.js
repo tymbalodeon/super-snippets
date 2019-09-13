@@ -1,22 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import SnippetApiService from '../../services/snippet-api-service';
 import './ProjectList.css';
 
 export default class ProjectList extends Component {
-  state = {
-    projects: [],
-    error: null
-  };
-
-  componentDidMount() {
-    SnippetApiService.getProjects()
-      .then(res => this.setState({ projects: res }))
-      .catch(error => this.setState({ error }));
-  }
-
   renderProjects() {
-    const { projects } = this.state;
+    const { projects } = this.props;
     return projects.map(project => (
       <li key={project.id}>
         <NavLink
@@ -30,16 +18,9 @@ export default class ProjectList extends Component {
   }
 
   render() {
-    const { error } = this.state;
     return (
       <div className="ProjectList">
-        <ul className="ProjectList__list">
-          {error ? (
-            <p className="red">There was an error, try again</p>
-          ) : (
-            this.renderProjects()
-          )}
-        </ul>
+        <ul className="ProjectList__list">{this.renderProjects()}</ul>
         <div className="ProjectList__button-wrapper">
           <button className="ProjectList__add-project-button">
             <Link to="/add-project">Create Project</Link>

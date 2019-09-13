@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
 import Snippet from '../Snippet/Snippet';
-import SnippetApiService from '../../services/snippet-api-service';
 import './SnippetList.css';
 export default class List extends Component {
-  state = {
-    snippets: [],
-    error: null
-  };
-
-  componentDidMount() {
-    SnippetApiService.getSnippets()
-      .then(res => this.setState({ snippets: res }))
-      .catch(error => this.setState({ error }));
-  }
-
   renderSnippets() {
-    const { snippets } = this.state;
-    const { project_id } = this.props.match.params;
+    console.log(this.props.params);
+    const { snippets } = this.props;
+    const { project_id } = this.props;
     let finalList = snippets;
     if (project_id) {
       finalList = snippets.filter(snippet => snippet.project_id === project_id);
@@ -27,7 +16,7 @@ export default class List extends Component {
   }
 
   render() {
-    const { error } = this.state;
+    const { error } = this.props;
     return (
       <div className="SnippetList">
         {error ? (
@@ -39,7 +28,3 @@ export default class List extends Component {
     );
   }
 }
-
-// client side validation rather than server
-// loading sign for registration and login
-// remove register and create log out for logged in state
