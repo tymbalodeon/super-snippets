@@ -26,6 +26,18 @@ export default class App extends Component {
 
   updateProjectId = project_id => this.setState({ project_id });
 
+  setProjects = projects => this.setState({ projects });
+
+  setSnippets = snippets => this.setState({ snippets });
+
+  addProject = project => {
+    this.setProjects([...this.state.projects, project]);
+  };
+
+  addSnippet = snippet => {
+    this.setSnippets([...this.state.snippets, snippet]);
+  };
+
   componentDidMount() {
     SnippetApiService.getProjects()
       .then(res => this.setState({ projects: res }))
@@ -37,7 +49,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { snippets, projects, project_id, error } = this.state;
+    const { snippets, projects, project_id } = this.state;
     return (
       <div className="App">
         <div className="App__projects">
@@ -59,7 +71,6 @@ export default class App extends Component {
                   snippets={snippets}
                   project_id={project_id}
                   updateSnippetId={this.updateSnippetId}
-                  error={error}
                 />
               )}
             />
@@ -68,7 +79,7 @@ export default class App extends Component {
             <Route
               path="/snippet/:snippet_id"
               render={rprops => {
-                return <SnippetDetail {...rprops} error={error} />;
+                return <SnippetDetail {...rprops} />;
               }}
             />
             <Route
@@ -78,14 +89,22 @@ export default class App extends Component {
                   snippets={snippets}
                   project_id={project_id}
                   updateSnippetId={this.updateSnippetId}
-                  error={error}
                 />
               )}
             />
-            <Route path="/add-project" component={AddProject} />
+            <Route
+              path="/add-project"
+              render={() => <AddProject addProject={this.addProject} />}
+            />
             <Route
               path="/add-snippet"
-              render={() => <AddSnippet projects={projects} error={error} />}
+              render={rprops => (
+                <AddSnippet
+                  {...rprops}
+                  addSnippet={this.addSnippet}
+                  projects={projects}
+                />
+              )}
             />
             <Route component={NotFoundPage} />
           </Switch>

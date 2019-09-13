@@ -12,13 +12,16 @@ export default class AddSnippet extends Component {
       project_id: project_id.value,
       user_id: 1
     };
+    const { addSnippet } = this.props;
     SnippetApiService.postSnippet(newSnippet)
+      .then(addSnippet)
       .then(() => {
         title.value = '';
         info.value = '';
         content.value = '';
         project_id.value = null;
       })
+      .then(() => this.props.history.push('/'))
       .catch();
   };
 

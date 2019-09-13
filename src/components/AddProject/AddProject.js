@@ -5,7 +5,9 @@ export default class AddProject extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { title } = e.target;
+    const { addProject } = this.props;
     SnippetApiService.postProject(title.value)
+      .then(addProject)
       .then(() => {
         title.value = '';
       })
