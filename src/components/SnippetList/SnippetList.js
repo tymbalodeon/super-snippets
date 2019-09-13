@@ -3,7 +3,6 @@ import Snippet from '../Snippet/Snippet';
 import './SnippetList.css';
 export default class List extends Component {
   renderSnippets() {
-    console.log(this.props.params);
     const { snippets } = this.props;
     const { project_id } = this.props;
     let finalList = snippets;

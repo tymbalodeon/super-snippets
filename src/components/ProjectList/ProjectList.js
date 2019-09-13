@@ -4,12 +4,13 @@ import './ProjectList.css';
 
 export default class ProjectList extends Component {
   renderProjects() {
-    const { projects } = this.props;
+    const { projects, updateProjectId } = this.props;
     return projects.map(project => (
       <li key={project.id}>
         <NavLink
           className="ProjectList__project-link"
           to={`/project/${project.id}`}
+          onClick={() => updateProjectId(project.id)}
         >
           {project.title}
         </NavLink>

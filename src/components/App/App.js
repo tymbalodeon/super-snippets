@@ -23,6 +23,10 @@ export default class App extends Component {
     };
   }
 
+  updateProjectId = project_id => {
+    this.setState({ project_id });
+  };
+
   componentDidMount() {
     // const snippetsPromise =
     SnippetApiService.getProjects()
@@ -40,7 +44,10 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="App__projects">
-          <ProjectList projects={projects} />
+          <ProjectList
+            projects={projects}
+            updateProjectId={this.updateProjectId}
+          />
         </div>
         <main className="App__main">
           <header>
@@ -63,7 +70,7 @@ export default class App extends Component {
             <Route path={'/snippet/:snippet_id'} component={SnippetDetail} />
             <Route
               path={'/project/:project_id'}
-              ender={() => (
+              render={() => (
                 <SnippetList
                   snippets={snippets}
                   project_id={project_id}

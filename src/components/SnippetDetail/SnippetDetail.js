@@ -27,7 +27,7 @@ export default class SnippetDetail extends Component {
           </div>
         </div>
         <button>
-          <Link to={'/'} className="Snippet">
+          <Link to="#" onClick={this.props.history.goBack} className="Snippet">
             Back to Snippet List
           </Link>
         </button>
