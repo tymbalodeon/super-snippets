@@ -2,6 +2,14 @@ button {
   display: block;
 }
 
+.add-button {
+  color: #1f2430;
+}
+
+.ProjectList__add-button {
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
   text-align: right;

@@ -12,7 +12,9 @@ export default class AddSnippet extends Component {
       project_id: project_id.value
     };
     const { addSnippet } = this.props;
+    let id;
     SnippetApiService.postSnippet(newSnippet)
+      .then(res => (id = res.id))
       .then(addSnippet)
       .then(() => {
         title.value = '';
@@ -20,14 +22,14 @@ export default class AddSnippet extends Component {
         content.value = '';
         project_id.value = null;
       })
-      .then(() => this.props.history.push('/'))
+      .then(() => this.props.history.push(`/snippets/${id}`))
       .catch();
   };
 
   componentDidMount() {
     SnippetApiService.getProjects()
-      .then(res => this.setState({ projects: res }))
-      .catch(err => this.setState({ err }));
+      .then(res => this.props.setProjects(res))
+      .catch(error => this.setState({ error }));
   }
 
   render() {

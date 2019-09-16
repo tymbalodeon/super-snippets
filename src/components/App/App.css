@@ -16,13 +16,16 @@
   width: 100%;
 }
 
-a,
-a:visited {
-  color: #5ccfe6;
-}
-
 code {
   color: #ffcc66;
+}
+
+button {
+  padding: 10px;
+  background-color: #cbccc6;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
 }
 
 /* accent: _('FFCC66'),

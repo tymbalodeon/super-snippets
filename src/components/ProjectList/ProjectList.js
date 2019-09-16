@@ -32,11 +32,15 @@ export default class ProjectList extends Component {
         <div className="ProjectList">
           <ul className="ProjectList__list">{this.renderProjects()}</ul>
           <div className="ProjectList__button-wrapper">
-            <button className="ProjectList__add-project-button">
-              <Link to="/add-project">Create Project</Link>
+            <button className="ProjectList__add-button">
+              <Link to="/add-project">
+                <span className="add-button">Create Project</span>
+              </Link>
             </button>
-            <button className="ProjectList__add-snippet-button">
-              <Link to="/add-snippet"> Create Snippet</Link>
+            <button className="ProjectList__add-button">
+              <Link to="/add-snippet">
+                <span className="add-button">Create Snippet</span>
+              </Link>
             </button>
           </div>
         </div>

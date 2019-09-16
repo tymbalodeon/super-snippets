@@ -1,7 +1,7 @@
 .Header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 50px;
   min-width: 500px;
 }
@@ -21,4 +21,9 @@
 
 .snippets {
   color: #f28779;
+}
+
+.brackets {
+  color: #5c6773;
+  font-size: 36px;
 }

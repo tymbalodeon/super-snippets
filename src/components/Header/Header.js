@@ -36,10 +36,10 @@ class Header extends Component {
         <nav className="Header">
           <h1>
             <Link to="/snippets" onClick={() => updateProjectId()}>
-              {'{ '}
+              <span className="brackets">{'{ '}</span>
               <span className="super">Super</span>
               <span className="snippets">Snippets</span>
-              {' }'}
+              <span className="brackets">{' }'}</span>
             </Link>
           </h1>
           <span className="Header__tagline--wide">Collide all the things.</span>

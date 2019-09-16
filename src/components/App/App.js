@@ -105,6 +105,7 @@ export default class App extends Component {
                 {...rprops}
                 addSnippet={this.addSnippet}
                 projects={projects}
+                setProjects={this.setProjects}
               />
             )}
           />
