@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Snippet from '../Snippet/Snippet';
+import SnippetApiService from '../../services/snippet-api-service';
 import './SnippetList.css';
 export default class List extends Component {
   renderSnippets() {
@@ -15,6 +16,13 @@ export default class List extends Component {
         updateSnippetId={updateSnippetId}
       />
     ));
+  }
+
+  componentDidMount() {
+    if (this.props.loggedIn)
+      SnippetApiService.getSnippets()
+        .then(res => this.props.setSnippets({ snippets: res }))
+        .catch(error => console.log({ error }));
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import SnippetApiService from '../../services/snippet-api-service';
 import './ProjectList.css';
 
 export default class ProjectList extends Component {
@@ -16,6 +17,13 @@ export default class ProjectList extends Component {
         </NavLink>
       </li>
     ));
+  }
+
+  componentDidMount() {
+    if (this.props.loggedIn)
+      SnippetApiService.getProjects()
+        .then(res => this.props.setProjects({ projects: res }))
+        .catch(error => console.log({ error }));
   }
 
   render() {

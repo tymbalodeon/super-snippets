@@ -9,21 +9,22 @@ import SnippetDetail from '../SnippetDetail/SnippetDetail';
 import NotFoundPage from '../NotFound/NotFound';
 import AddProject from '../AddProject/AddProject';
 import AddSnippet from '../AddSnippet/AddSnippet';
-import SnippetApiService from '../../services/snippet-api-service';
 import './App.css';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      snippets: [],
-      projects: [],
-      project_id: null,
-      error: null
-    };
-  }
+  state = {
+    snippets: [],
+    projects: [],
+    project_id: null,
+    loggedIn: false,
+    error: null
+  };
 
   updateProjectId = project_id => this.setState({ project_id });
+
+  logIn = () => this.setState({ loggedIn: true });
+
+  logOut = () => this.setState({ loggedIn: false });
 
   setProjects = projects => this.setState({ projects });
 
@@ -37,49 +38,50 @@ export default class App extends Component {
     this.setSnippets([...this.state.snippets, snippet]);
   };
 
-  componentDidMount() {
-    SnippetApiService.getProjects()
-      .then(res => this.setState({ projects: res }))
-      .catch(error => this.setState({ error }));
-
-    SnippetApiService.getSnippets()
-      .then(res => this.setState({ snippets: res }))
-      .catch(error => this.setState({ error }));
-  }
-
   render() {
-    const { snippets, projects, project_id } = this.state;
+    const { snippets, projects, project_id, loggedIn } = this.state;
     return (
       <div className="App">
         <div className="App__projects">
           <ProjectList
             projects={projects}
             updateProjectId={this.updateProjectId}
+            setProjects={this.setProjects}
+            setSnippets={this.setSnippets}
+            loggedIn={loggedIn}
           />
         </div>
         <main className="App__main">
           <header>
-            <Header updateProjectId={this.updateProjectId} />
+            <Header
+              updateProjectId={this.updateProjectId}
+              loggedIn={loggedIn}
+              logOut={this.logOut}
+            />
           </header>
           <Switch>
+            <Route exact path="/" render={() => <NotFoundPage />} />
             <Route
-              exact
-              path="/"
+              path={'/login'}
+              render={rprops => <Login {...rprops} logIn={this.logIn} />}
+            />
+            <Route path={'/register'} component={Register} />
+            <Route
+              path="/snippet/:snippet_id"
+              render={rprops => <SnippetDetail {...rprops} />}
+            />
+            <Route
+              path="/snippets"
               render={() => (
                 <SnippetList
                   snippets={snippets}
                   project_id={project_id}
                   updateSnippetId={this.updateSnippetId}
+                  setProjects={this.setProjects}
+                  setSnippets={this.setSnippets}
+                  loggedIn={loggedIn}
                 />
               )}
-            />
-            <Route path={'/login'} component={Login} />
-            <Route path={'/register'} component={Register} />
-            <Route
-              path="/snippet/:snippet_id"
-              render={rprops => {
-                return <SnippetDetail {...rprops} />;
-              }}
             />
             <Route
               path="/project/:project_id"

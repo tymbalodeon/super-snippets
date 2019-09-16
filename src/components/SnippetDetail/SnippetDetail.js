@@ -13,15 +13,18 @@ export default class SnippetDetail extends Component {
       snippet => this.setState({ snippet })
     );
   }
+
   render() {
     return (
-      <div className="Snippet_wrapper">
+      <div className="Snippet__detail__wrapper">
         <div className="Snippet__details">
           <div className="Snippet__text">
             <h2 className="Snippet__heading">
               {this.state.snippet.snippet_name}
             </h2>
-            <p className="Snippet__description">{this.state.snippet.content}</p>
+            <code className="Snippet__description">
+              {this.state.snippet.content}
+            </code>
           </div>
         </div>
         <button>

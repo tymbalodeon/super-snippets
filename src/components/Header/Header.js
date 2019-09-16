@@ -3,17 +3,21 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 class Header extends Component {
-  // handleLogoutClick = () => {};
+  handleLogoutClick = () => {
+    const { history, logOut } = this.props;
+    logOut();
+    history.push('/');
+  };
 
-  // renderLogoutLink() {
-  //   return (
-  //     <div className="Header__logged-in">
-  //       <Link onClick={this.handleLogoutClick} to="/">
-  //         Logout
-  //       </Link>
-  //     </div>
-  //   );
-  // }
+  renderLogoutLink() {
+    return (
+      <div className="Header__logged-in">
+        <Link onClick={this.handleLogoutClick} to="/">
+          Logout
+        </Link>
+      </div>
+    );
+  }
 
   renderLoginLink() {
     return (
@@ -25,17 +29,17 @@ class Header extends Component {
   }
 
   render() {
-    const { updateProjectId } = this.props;
+    const { updateProjectId, loggedIn } = this.props;
     return (
       <>
         <nav className="Header">
           <h1>
-            <Link to="/" onClick={() => updateProjectId()}>
+            <Link to="/snippets" onClick={() => updateProjectId()}>
               SuperSnippets
             </Link>
           </h1>
           <span className="Header__tagline--wide">Collide all the things.</span>
-          {this.renderLoginLink()}
+          {loggedIn ? this.renderLogoutLink() : this.renderLoginLink()}
         </nav>
       </>
     );

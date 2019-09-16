@@ -7,12 +7,12 @@ export default class Login extends Component {
   state = { error: null };
 
   handleLoginSuccess = () => {
-    const { location, history } = this.props;
-    const destination = (location.state || {}).from || '/';
-    history.push(destination);
+    const { logIn } = this.props;
+    logIn();
   };
 
   handleSubmitJwtAuth = e => {
+    console.log(this.props.history);
     e.preventDefault();
     this.setState({ error: null });
     const { user_name, password } = e.target;
@@ -27,7 +27,11 @@ export default class Login extends Component {
         TokenService.saveAuthToken(res.authToken);
         this.handleLoginSuccess();
       })
-      .then(() => this.props.history.push('/'))
+      .then(() => {
+        const { location, history } = this.props;
+        const destination = (location.state || {}).from || '/snippets';
+        history.push(destination);
+      })
       .catch(res => {
         this.setState({ error: res.error });
       });
@@ -37,7 +41,9 @@ export default class Login extends Component {
     const { error } = this.state;
     return (
       <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
-        <div role="alert">{error && <p className="red">{error}</p>}</div>
+        <div role="alert">
+          {error && <p className="red">{error.message}</p>}
+        </div>
         <div className="user_name">
           <label htmlFor="LoginForm__user_name">User name</label>
           <input
