@@ -34,12 +34,12 @@ export default class App extends Component {
   };
 
   render() {
-    const { snippets, projects, project_id, loggedIn } = this.state;
+    const { snippets, projects, project_id } = this.state;
     return (
       <div className="App">
         <div className="App__projects">
           <Route
-            path="/snippets"
+            path={['/snippets', '/projects', '/add-snippet', '/add-project']}
             render={rprops => (
               <ProjectList
                 {...rprops}
@@ -68,29 +68,29 @@ export default class App extends Component {
           />
           <Route path={'/register'} component={Register} />
           <Route
-            path="/snippet/:snippet_id"
+            path="/snippets/:snippet_id"
             render={rprops => <SnippetDetail {...rprops} />}
           />
           <Route
+            exact
             path="/snippets"
             render={() => (
               <SnippetList
                 snippets={snippets}
                 project_id={project_id}
-                updateSnippetId={this.updateSnippetId}
                 setProjects={this.setProjects}
                 setSnippets={this.setSnippets}
-                loggedIn={loggedIn}
               />
             )}
           />
           <Route
-            path="/project/:project_id"
+            path="/projects/:project_id"
             render={() => (
               <SnippetList
                 snippets={snippets}
                 project_id={project_id}
-                updateSnippetId={this.updateSnippetId}
+                setProjects={this.setProjects}
+                setSnippets={this.setSnippets}
               />
             )}
           />

@@ -10,7 +10,7 @@ export default class ProjectList extends Component {
       <li key={project.id}>
         <NavLink
           className="ProjectList__project-link"
-          to={`/project/${project.id}`}
+          to={`/projects/${project.id}`}
           onClick={() => updateProjectId(project.id)}
         >
           {project.title}
