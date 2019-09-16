@@ -20,25 +20,29 @@ export default class ProjectList extends Component {
   }
 
   componentDidMount() {
-    if (this.props.loggedIn)
+    if (localStorage.getItem('super-snippets-client-auth-token'))
       SnippetApiService.getProjects()
-        .then(res => this.props.setProjects({ projects: res }))
+        .then(res => this.props.setProjects(res))
         .catch(error => console.log({ error }));
   }
 
   render() {
-    return (
-      <div className="ProjectList">
-        <ul className="ProjectList__list">{this.renderProjects()}</ul>
-        <div className="ProjectList__button-wrapper">
-          <button className="ProjectList__add-project-button">
-            <Link to="/add-project">Create Project</Link>
-          </button>
-          <button className="ProjectList__add-snippet-button">
-            <Link to="/add-snippet"> Create Snippet</Link>
-          </button>
+    if (localStorage.getItem('super-snippets-client-auth-token')) {
+      return (
+        <div className="ProjectList">
+          <ul className="ProjectList__list">{this.renderProjects()}</ul>
+          <div className="ProjectList__button-wrapper">
+            <button className="ProjectList__add-project-button">
+              <Link to="/add-project">Create Project</Link>
+            </button>
+            <button className="ProjectList__add-snippet-button">
+              <Link to="/add-snippet"> Create Snippet</Link>
+            </button>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return '';
+    }
   }
 }

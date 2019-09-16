@@ -4,8 +4,8 @@ import './Header.css';
 
 class Header extends Component {
   handleLogoutClick = () => {
-    const { history, logOut } = this.props;
-    logOut();
+    const { history } = this.props;
+    localStorage.removeItem('super-snippets-client-auth-token');
     history.push('/');
   };
 
@@ -29,7 +29,8 @@ class Header extends Component {
   }
 
   render() {
-    const { updateProjectId, loggedIn } = this.props;
+    const { updateProjectId } = this.props;
+    const loggedIn = localStorage.getItem('super-snippets-client-auth-token');
     return (
       <>
         <nav className="Header">

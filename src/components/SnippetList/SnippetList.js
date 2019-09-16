@@ -19,22 +19,24 @@ export default class List extends Component {
   }
 
   componentDidMount() {
-    if (this.props.loggedIn)
+    if (localStorage.getItem('super-snippets-client-auth-token'))
       SnippetApiService.getSnippets()
-        .then(res => this.props.setSnippets({ snippets: res }))
+        .then(res => this.props.setSnippets(res))
         .catch(error => console.log({ error }));
   }
 
   render() {
-    const { error } = this.props;
-    return (
-      <div className="SnippetList">
-        {error ? (
-          <p className="red">There was an error, try again</p>
-        ) : (
-          this.renderSnippets()
-        )}
-      </div>
-    );
+    if (localStorage.getItem('super-snippets-client-auth-token')) {
+      const { error } = this.props;
+      return (
+        <div className="SnippetList">
+          {error ? (
+            <p className="red">There was an error, try again</p>
+          ) : (
+            this.renderSnippets()
+          )}
+        </div>
+      );
+    } else return '';
   }
 }

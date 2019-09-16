@@ -6,13 +6,7 @@ import './Login.css';
 export default class Login extends Component {
   state = { error: null };
 
-  handleLoginSuccess = () => {
-    const { logIn } = this.props;
-    logIn();
-  };
-
   handleSubmitJwtAuth = e => {
-    console.log(this.props.history);
     e.preventDefault();
     this.setState({ error: null });
     const { user_name, password } = e.target;
@@ -25,12 +19,8 @@ export default class Login extends Component {
         user_name.value = '';
         password.value = '';
         TokenService.saveAuthToken(res.authToken);
-        this.handleLoginSuccess();
-      })
-      .then(() => {
-        const { location, history } = this.props;
-        const destination = (location.state || {}).from || '/snippets';
-        history.push(destination);
+        const { history } = this.props;
+        history.push('/');
       })
       .catch(res => {
         this.setState({ error: res.error });
