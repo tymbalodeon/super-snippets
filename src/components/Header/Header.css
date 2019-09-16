@@ -14,3 +14,11 @@
 .Header__not-logged-in a {
   padding: 10px;
 }
+
+.super {
+  color: #ffa759;
+}
+
+.snippets {
+  color: #f28779;
+}

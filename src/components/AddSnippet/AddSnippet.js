@@ -9,8 +9,7 @@ export default class AddSnippet extends Component {
       title: title.value,
       info: info.value,
       content: content.value,
-      project_id: project_id.value,
-      user_id: 1
+      project_id: project_id.value
     };
     const { addSnippet } = this.props;
     SnippetApiService.postSnippet(newSnippet)

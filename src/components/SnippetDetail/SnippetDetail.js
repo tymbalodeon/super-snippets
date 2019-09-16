@@ -22,6 +22,7 @@ export default class SnippetDetail extends Component {
             <h2 className="Snippet__heading">
               {this.state.snippet.snippet_name}
             </h2>
+            <p>{this.state.snippet.info}</p>
             <code className="Snippet__description">
               {this.state.snippet.content}
             </code>
