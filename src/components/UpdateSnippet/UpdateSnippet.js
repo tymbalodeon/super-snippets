@@ -33,23 +33,38 @@ export default class UpdateSnippet extends Component {
   }
 
   render() {
+    const { snippet } = this.props.location.state;
     const { projects, error } = this.props;
     return (
       <section className="AddSnippet">
-        <h2>Create a snippet</h2>
+        <h2>Edit Snippet</h2>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <form onSubmit={this.handleSubmit}>
           <div className="field">
             <label htmlFor="snippet-name-input">Name</label>
-            <input type="text" id="snippet-name-input" name="title" />
+            <input
+              type="text"
+              id="snippet-name-input"
+              name="title"
+              placeholder={snippet.snippet_name}
+            />
           </div>
           <div className="field">
             <label htmlFor="snippet-info-input">Description</label>
-            <input type="text" id="snippet-info-input" name="info" />
+            <input
+              type="text"
+              id="snippet-info-input"
+              name="info"
+              placeholder={snippet.info}
+            />
           </div>
           <div className="field">
             <label htmlFor="snippet-content-input">Content</label>
-            <textarea id="snippet-content-input" name="content" />
+            <textarea
+              id="snippet-content-input"
+              name="content"
+              placeholder={snippet.content}
+            />
           </div>
           <div className="field">
             <label htmlFor="snippet-project-select">Project</label>
@@ -63,7 +78,7 @@ export default class UpdateSnippet extends Component {
             </select>
           </div>
           <div className="buttons">
-            <button type="submit">Add snippet</button>
+            <button type="submit">Edit snippet</button>
           </div>
         </form>
       </section>

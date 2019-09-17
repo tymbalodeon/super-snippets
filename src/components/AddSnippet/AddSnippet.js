@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SnippetApiService from '../../services/snippet-api-service';
+import './AddSnippet.css';
 
 export default class AddSnippet extends Component {
   handleSubmit = e => {

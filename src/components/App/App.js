@@ -40,7 +40,13 @@ export default class App extends Component {
       <div className="App">
         <div className="App__projects">
           <Route
-            path={['/snippets', '/projects', '/add-snippet', '/add-project']}
+            path={[
+              '/snippets',
+              '/projects',
+              '/add-snippet',
+              '/add-project',
+              '/update'
+            ]}
             render={rprops => (
               <ProjectList
                 {...rprops}

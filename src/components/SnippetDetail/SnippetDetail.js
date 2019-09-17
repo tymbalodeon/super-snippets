@@ -43,7 +43,16 @@ export default class SnippetDetail extends Component {
             </Link>
           </button>
           <button className="button-detail">
-            <Link to="/update">Edit</Link>
+            <Link
+              to={{
+                pathname: '/update',
+                state: {
+                  snippet: this.state.snippet
+                }
+              }}
+            >
+              Edit
+            </Link>
           </button>
           <button className="button-detail">PLAY!</button>
           <button className="button-detail" onClick={this.handleDelete}>
