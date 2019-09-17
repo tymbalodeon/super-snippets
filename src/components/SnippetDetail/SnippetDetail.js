@@ -8,6 +8,12 @@ export default class SnippetDetail extends Component {
     snippet: {}
   };
 
+  handleDelete = () => {
+    const idToDelete = this.props.match.params.snippet_id;
+    SnippetApiService.deleteSnippet(idToDelete);
+    this.props.history.goBack();
+  };
+
   componentDidMount() {
     SnippetApiService.getSnippet(this.props.match.params.snippet_id).then(
       snippet => this.setState({ snippet })
@@ -30,15 +36,20 @@ export default class SnippetDetail extends Component {
             </div>
           </div>
         </div>
-        <button>
-          <Link to="#" onClick={this.props.history.goBack}>
-            Back to Snippet List
-          </Link>
-        </button>
-        <button>
-          <Link to="/update">Update Snippet</Link>
-        </button>
-        <button>PLAY!</button>
+        <div className="button-flex">
+          <button className="button-detail">
+            <Link to="#" onClick={this.props.history.goBack}>
+              Back
+            </Link>
+          </button>
+          <button className="button-detail">
+            <Link to="/update">Edit</Link>
+          </button>
+          <button className="button-detail">PLAY!</button>
+          <button className="button-detail" onClick={this.handleDelete}>
+            Delete
+          </button>
+        </div>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-button {
+add-button {
   display: block;
   color: #1f2430;
   text-decoration: none;
@@ -14,4 +14,15 @@ ul {
 
 .ProjectList__project-link {
   color: #bae67e;
+}
+
+li {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.active {
+  background-color: #cbccc6;
+  color: #1f2430;
 }

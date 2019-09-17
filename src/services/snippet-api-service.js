@@ -62,6 +62,14 @@ const SnippetApiService = {
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
+  },
+  deleteSnippet(snippet_id) {
+    return fetch(`${config.API_ENDPOINT}/snippets/${snippet_id}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      }
+    }).then(res => (!res.ok ? res.json().then(e => Promise.reject(e)) : res));
   }
 };
 

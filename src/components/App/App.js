@@ -9,6 +9,7 @@ import SnippetDetail from '../SnippetDetail/SnippetDetail';
 import Landing from '../Landing/Landing';
 import AddProject from '../AddProject/AddProject';
 import AddSnippet from '../AddSnippet/AddSnippet';
+import UpdateSnippet from '../UpdateSnippet/UpdateSnippet';
 import './App.css';
 
 export default class App extends Component {
@@ -102,6 +103,17 @@ export default class App extends Component {
             path="/add-snippet"
             render={rprops => (
               <AddSnippet
+                {...rprops}
+                addSnippet={this.addSnippet}
+                projects={projects}
+                setProjects={this.setProjects}
+              />
+            )}
+          />
+          <Route
+            path="/update"
+            render={rprops => (
+              <UpdateSnippet
                 {...rprops}
                 addSnippet={this.addSnippet}
                 projects={projects}
