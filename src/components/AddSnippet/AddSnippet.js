@@ -41,19 +41,19 @@ export default class AddSnippet extends Component {
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <form onSubmit={this.handleSubmit}>
           <div className="field">
-            <label htmlFor="snippet-name-input">Name</label>
+            <label htmlFor="snippet-name-input">Name: </label>
             <input type="text" id="snippet-name-input" name="title" />
           </div>
           <div className="field">
-            <label htmlFor="snippet-info-input">Description</label>
+            <label htmlFor="snippet-info-input">Description: </label>
             <input type="text" id="snippet-info-input" name="info" />
           </div>
           <div className="field">
-            <label htmlFor="snippet-content-input">Content</label>
+            <label htmlFor="snippet-content-input">Content: </label>
             <textarea id="snippet-content-input" name="content" />
           </div>
           <div className="field">
-            <label htmlFor="snippet-project-select">Project</label>
+            <label htmlFor="snippet-project-select">Project: </label>
             <select id="snippet-project-select" name="project_id">
               <option value={null}>--Choose A Project--</option>
               {projects.map(project => (
@@ -64,7 +64,7 @@ export default class AddSnippet extends Component {
             </select>
           </div>
           <div className="buttons">
-            <button type="submit">Add snippet</button>
+            <button type="submit">ADD</button>
           </div>
         </form>
       </section>

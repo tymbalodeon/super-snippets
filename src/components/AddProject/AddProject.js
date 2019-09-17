@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SnippetApiService from '../../services/snippet-api-service.js';
+import './AddProject.css';
 
 export default class AddProject extends Component {
   handleSubmit = e => {
@@ -20,7 +21,7 @@ export default class AddProject extends Component {
         <h2>Create a project</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="field">
-            <label htmlFor="project-name-input">Name</label>
+            <label htmlFor="project-name-input">Name: </label>
             <input type="text" id="project-name-input" name="title" required />
           </div>
           <div className="buttons">

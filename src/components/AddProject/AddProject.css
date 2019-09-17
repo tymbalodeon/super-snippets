@@ -1,0 +1,14 @@
+.AddProject {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.AddProject * > button {
+  background-color: #ffa759;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.AddProject > h2 {
+  color: #5ccfe6;
+}

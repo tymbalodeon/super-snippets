@@ -1,3 +1,18 @@
+.AddSnippet {
+  margin-top: 50px;
+}
+
+.AddSnippet * > button {
+  background-color: #ffa759;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.AddSnippet > h2 {
+  color: #5ccfe6;
+  text-align: center;
+}
+
 input,
 textarea {
   font-size: 16px;
@@ -6,4 +21,8 @@ textarea {
 textarea {
   width: 75%;
   height: 300px;
+}
+
+.buttons {
+  text-align: center;
 }

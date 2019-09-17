@@ -5,6 +5,23 @@ import './Register.css';
 export default class Register extends Component {
   state = { error: null };
 
+  validatePassword = password => {
+    const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]/;
+    if (password.length < 8) {
+      return 'Password must be longer than 8 characters';
+    }
+    if (password.length > 72) {
+      return 'Password must be less than 72 characters';
+    }
+    if (password.startsWith(' ') || password.endsWith(' ')) {
+      return 'Password must not start or end with empty spaces';
+    }
+    if (!REGEX_UPPER_LOWER_NUMBER_SPECIAL.test(password)) {
+      return 'Password must contain 1 upper case, lower case, number and special character';
+    }
+    return null;
+  };
+
   handleRegistrationSuccess = user => {
     const { history } = this.props;
     history.push('/login');
@@ -13,6 +30,13 @@ export default class Register extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { first_name, last_name, user_name, password } = e.target;
+
+    const passwordError = this.validatePassword(password.value);
+
+    if (passwordError) {
+      this.setState({ error: passwordError });
+      return;
+    }
 
     this.setState({ error: null });
     AuthApiService.postUser({
@@ -37,7 +61,7 @@ export default class Register extends Component {
     const { error } = this.state;
     return (
       <form className="RegistrationForm" onSubmit={this.handleSubmit}>
-        <div role="alert">{error && <p className="red">{error}</p>}</div>
+        <div role="alert">{error && <p className="error">{error}</p>}</div>
         <div className="first_name">
           <label htmlFor="RegistrationForm__first_name">First name: </label>
           <input
