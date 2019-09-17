@@ -1,9 +1,15 @@
-add-button {
+.ProjectList__add-button {
   display: block;
-  color: #1f2430;
-  text-decoration: none;
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 100%;
+}
+
+.ProjectList__add-button > a,
+.ProjectList__add-button > a:visited {
+  text-decoration: none;
+  color: #1f2430;
+  font-size: 14px;
 }
 
 ul {

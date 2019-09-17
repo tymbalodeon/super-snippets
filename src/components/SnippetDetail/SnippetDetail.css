@@ -8,6 +8,7 @@
 
 .code {
   margin-bottom: 20px;
+  white-space: pre-wrap;
 }
 
 .button-detail {
