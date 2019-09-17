@@ -22,17 +22,23 @@ export default class SnippetDetail extends Component {
             <h2 className="Snippet__heading">
               {this.state.snippet.snippet_name}
             </h2>
-            <p>{this.state.snippet.info}</p>
-            <code className="Snippet__description">
-              {this.state.snippet.content}
-            </code>
+            <p className="Snippet__info">{this.state.snippet.info}</p>
+            <div className="code">
+              <code className="Snippet__content">
+                {this.state.snippet.content}
+              </code>
+            </div>
           </div>
         </div>
         <button>
-          <Link to="#" onClick={this.props.history.goBack} className="Snippet">
+          <Link to="#" onClick={this.props.history.goBack}>
             Back to Snippet List
           </Link>
         </button>
+        <button>
+          <Link to="/update">Update Snippet</Link>
+        </button>
+        <button>PLAY!</button>
       </div>
     );
   }

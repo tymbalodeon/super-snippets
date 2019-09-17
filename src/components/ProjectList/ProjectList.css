@@ -1,17 +1,17 @@
 button {
   display: block;
-}
-
-.add-button {
   color: #1f2430;
-}
-
-.ProjectList__add-button {
   text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 ul {
   list-style: none;
   text-align: right;
   margin: 0;
+}
+
+.ProjectList__project-link {
+  color: #bae67e;
 }

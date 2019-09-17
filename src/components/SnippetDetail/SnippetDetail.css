@@ -1,3 +1,11 @@
 .Snippet__detail__wrapper {
   margin-top: 50px;
 }
+
+.Snippet__info {
+  color: #cbccc6;
+}
+
+.code {
+  margin-bottom: 20px;
+}

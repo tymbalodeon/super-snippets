@@ -1,3 +1,9 @@
 .LoginForm {
   margin-top: 50px;
 }
+
+label {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

@@ -1,3 +1,7 @@
 .Snippet_wrapper a {
   text-decoration: none;
 }
+
+.Snippet__details {
+  color: #5ccfe6;
+}
