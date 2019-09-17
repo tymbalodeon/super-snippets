@@ -54,8 +54,8 @@ export default class SnippetDetail extends Component {
               Edit
             </Link>
           </button>
-          <button className="button-detail">PLAY!</button>
-          <button className="button-detail" onClick={this.handleDelete}>
+          <button className="button-detail-play">PLAY!</button>
+          <button className="button-detail-delete" onClick={this.handleDelete}>
             Delete
           </button>
         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Landing.css';
 
 export default class NotFoundPage extends Component {
   render() {
@@ -7,7 +8,13 @@ export default class NotFoundPage extends Component {
       <section className="Landing">
         <h2>Welcome to SuperSnippets</h2>
         {loggedIn ? '' : <p>Please Login or Register above.</p>}
-        <p>This is a description of the site.</p>
+        <p className="landing-p">
+          This is a place to sketch, store, and organize musical ideas in the
+          form of audio and notation, using SuperCollider and LilyPond,
+          respectively. Sketch out your ideas, put them in a project folder, tag
+          them by category, hit play to hear what they sound like, or engrave to
+          see what it looks like!
+        </p>
       </section>
     );
   }

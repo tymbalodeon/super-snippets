@@ -38,37 +38,38 @@ export default class App extends Component {
     const { snippets, projects, project_id } = this.state;
     return (
       <div className="App">
-        <div className="App__projects">
+        <header>
           <Route
-            path={[
-              '/snippets',
-              '/projects',
-              '/add-snippet',
-              '/add-project',
-              '/update'
-            ]}
+            path="/"
             render={rprops => (
-              <ProjectList
-                {...rprops}
-                projects={projects}
-                updateProjectId={this.updateProjectId}
-                setProjects={this.setProjects}
-                setSnippets={this.setSnippets}
-              />
+              <Header {...rprops} updateProjectId={this.updateProjectId} />
             )}
           />
-        </div>
+        </header>
+
         <main className="App__main">
-          <header>
+          <div className="App__projects">
             <Route
-              path="/"
+              path={[
+                '/snippets',
+                '/projects',
+                '/add-snippet',
+                '/add-project',
+                '/update'
+              ]}
               render={rprops => (
-                <Header {...rprops} updateProjectId={this.updateProjectId} />
+                <ProjectList
+                  {...rprops}
+                  projects={projects}
+                  updateProjectId={this.updateProjectId}
+                  setProjects={this.setProjects}
+                  setSnippets={this.setSnippets}
+                />
               )}
             />
-          </header>
-
+          </div>
           <Route exact path="/" render={() => <Landing />} />
+
           <Route
             path={'/login'}
             render={rprops => <Login {...rprops} logIn={this.logIn} />}

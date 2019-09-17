@@ -42,7 +42,7 @@ class Header extends Component {
               <span className="brackets">{' }'}</span>
             </Link>
           </h1>
-          <span className="Header__tagline--wide">Collide all the things.</span>
+          {/* <span className="Header__tagline--wide">Collide all the things.</span> */}
           {loggedIn ? this.renderLogoutLink() : this.renderLoginLink()}
         </nav>
       </>
