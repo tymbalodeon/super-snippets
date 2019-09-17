@@ -39,7 +39,7 @@ export default class Register extends Component {
       <form className="RegistrationForm" onSubmit={this.handleSubmit}>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <div className="first_name">
-          <label htmlFor="RegistrationForm__first_name">First name</label>
+          <label htmlFor="RegistrationForm__first_name">First name: </label>
           <input
             type="text"
             name="first_name"
@@ -48,7 +48,7 @@ export default class Register extends Component {
           ></input>
         </div>
         <div className="last_name">
-          <label htmlFor="RegistrationForm__last_name">Last name</label>
+          <label htmlFor="RegistrationForm__last_name">Last name: </label>
           <input
             type="text"
             name="last_name"
@@ -57,7 +57,7 @@ export default class Register extends Component {
           ></input>
         </div>
         <div className="user_name">
-          <label htmlFor="RegistrationForm__user_name">User name</label>
+          <label htmlFor="RegistrationForm__user_name">User name: </label>
           <input
             type="text"
             name="user_name"
@@ -66,7 +66,7 @@ export default class Register extends Component {
           ></input>
         </div>
         <div className="password">
-          <label htmlFor="RegistrationForm__password">Password</label>
+          <label htmlFor="RegistrationForm__password">Password: </label>
           <input
             type="password"
             name="password"
@@ -74,7 +74,7 @@ export default class Register extends Component {
             required
           ></input>
         </div>
-        <button type="submit">Register</button>
+        <button type="submit">REGISTER</button>
       </form>
     );
   }

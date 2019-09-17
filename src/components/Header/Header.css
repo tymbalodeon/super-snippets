@@ -1,15 +1,14 @@
 .Header {
   text-align: center;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-left: 30px;
-  margin-right: 30px;
 }
 
 .Header__not-logged-in > a,
 .Header__logged-in > a {
-  padding: 10px;
   color: #d4bfff;
+}
+
+.Header__not-logged-in > a {
+  padding: 10px;
 }
 
 .super {

@@ -35,7 +35,7 @@ export default class Login extends Component {
           {error && <p className="red">{error.message}</p>}
         </div>
         <div className="user_name">
-          <label htmlFor="LoginForm__user_name">User name</label>
+          <label htmlFor="LoginForm__user_name">User name: </label>
           <input
             type="text"
             name="user_name"
@@ -44,7 +44,7 @@ export default class Login extends Component {
           ></input>
         </div>
         <div className="password">
-          <label htmlFor="LoginForm__password">Password</label>
+          <label htmlFor="LoginForm__password">Password: </label>
           <input
             type="password"
             name="password"
@@ -52,7 +52,7 @@ export default class Login extends Component {
             required
           ></input>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">LOGIN</button>
       </form>
     );
   }

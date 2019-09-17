@@ -1,3 +1,9 @@
 .RegistrationForm {
-  margin-top: 50px;
+  text-align: center;
+}
+
+.RegistrationForm > button {
+  background-color: #ffa759;
+  margin-top: 20px;
+  padding: 5px;
 }

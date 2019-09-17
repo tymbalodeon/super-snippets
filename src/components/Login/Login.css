@@ -1,9 +1,19 @@
 .LoginForm {
-  margin-top: 50px;
+  text-align: center;
+}
+
+input {
+  margin-bottom: 10px;
 }
 
 label {
   display: block;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.LoginForm > button {
+  background-color: #ffa759;
+  margin-top: 20px;
+  padding: 5px;
 }

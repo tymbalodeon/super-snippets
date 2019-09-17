@@ -1,8 +1,13 @@
 .ProjectList__add-button {
-  display: block;
+  padding: 5px;
   margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #cbccc6;
+  text-transform: uppercase;
+  color: #1f2430;
+  font-size: 12px;
+  width: 120px;
 }
 
 .ProjectList__add-button > a,
@@ -12,8 +17,13 @@
   font-size: 14px;
 }
 
+.ProjectList__button-wrapper {
+  text-align: center;
+}
+
 ul {
-  list-style: none;
+  list-style-type: none;
+  padding: 0;
   text-align: center;
   margin: 0;
 }
@@ -23,8 +33,7 @@ ul {
 }
 
 li {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding: 5px;
   text-transform: uppercase;
 }
 

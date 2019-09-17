@@ -1,22 +1,13 @@
 .App {
-  justify-content: space-between;
   color: #cbccc6;
 }
 
 .App__main {
-  padding: 50px;
+  padding: 30px 50px;
 }
 
 code {
-  color: #ffcc66;
-}
-
-button {
-  padding: 10px;
-  background-color: #cbccc6;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  text-transform: uppercase;
+  color: #ffd580;
 }
 
 a {

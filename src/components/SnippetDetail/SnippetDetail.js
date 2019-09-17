@@ -37,12 +37,12 @@ export default class SnippetDetail extends Component {
           </div>
         </div>
         <div className="button-flex">
-          <button className="button-detail">
+          <button className="button-detail-back">
             <Link to="#" onClick={this.props.history.goBack}>
               Back
             </Link>
           </button>
-          <button className="button-detail">
+          <button className="button-detail-edit">
             <Link
               to={{
                 pathname: '/update',
