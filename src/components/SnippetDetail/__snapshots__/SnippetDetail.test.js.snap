@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SnippetDetail /> renders the UI as expected 1`] = `
+<div
+  className="Snippet__detail__wrapper"
+>
+  <div
+    className="Snippet__details"
+  >
+    <div
+      className="Snippet__text"
+    >
+      <h2
+        className="Snippet__heading"
+      />
+      <p
+        className="Snippet__info"
+      />
+      <div
+        className="code"
+      >
+        <code
+          className="Snippet__content"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="button-flex"
+  >
+    <button
+      className="button-detail-back"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        BACK
+      </a>
+    </button>
+    <button
+      className="button-detail-edit"
+    >
+      <a
+        href="/update"
+        onClick={[Function]}
+      >
+        EDIT
+      </a>
+    </button>
+    <button
+      className="button-detail-play"
+    >
+      PLAY
+    </button>
+    <button
+      className="button-detail-delete"
+      onClick={[Function]}
+    >
+      DELETE
+    </button>
+  </div>
+</div>
+`;

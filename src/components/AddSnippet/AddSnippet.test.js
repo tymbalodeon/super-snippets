@@ -24,7 +24,6 @@ describe('<AddSnippet />', () => {
   });
 
   it('renders the UI as expected', () => {
-    console.log(projects);
     const tree = renderer
       .create(
         <BrowserRouter>

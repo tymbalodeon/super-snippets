@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import SnippetDetail from './SnippetDetail';
 
-describe.skip('<SnippetDetail />', () => {
+describe('<SnippetDetail />', () => {
   const history = createMemoryHistory('/');
   const match = {
     params: {
@@ -18,7 +18,7 @@ describe.skip('<SnippetDetail />', () => {
 
     ReactDOM.render(
       <BrowserRouter>
-        <SnippetDetail history={history} />
+        <SnippetDetail history={history} match={match} />
       </BrowserRouter>,
       div
     );
@@ -30,7 +30,7 @@ describe.skip('<SnippetDetail />', () => {
     const tree = renderer
       .create(
         <BrowserRouter>
-          <SnippetDetail history={history} />
+          <SnippetDetail history={history} match={match} />
         </BrowserRouter>
       )
       .toJSON();

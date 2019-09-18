@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UpdateSnippet /> renders the UI as expected 1`] = `
+<section
+  className="AddSnippet"
+>
+  <h2>
+    Edit Snippet
+  </h2>
+  <div
+    role="alert"
+  />
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="snippet-name-input"
+      >
+        Name
+      </label>
+      <input
+        id="snippet-name-input"
+        name="title"
+        type="text"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="snippet-info-input"
+      >
+        Description
+      </label>
+      <input
+        id="snippet-info-input"
+        name="info"
+        placeholder="testing stuff"
+        type="text"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="snippet-content-input"
+      >
+        Content
+      </label>
+      <textarea
+        id="snippet-content-input"
+        name="content"
+        placeholder="test content"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="snippet-project-select"
+      >
+        Project
+      </label>
+      <select
+        id="snippet-project-select"
+        name="project_id"
+      >
+        <option
+          value={null}
+        >
+          --Choose A Project--
+        </option>
+        <option
+          value={1}
+        >
+          Project with Live Trumpet
+        </option>
+        <option
+          value={2}
+        >
+          Example
+        </option>
+      </select>
+    </div>
+    <div
+      className="buttons"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <button>
+          BACK
+        </button>
+      </a>
+      <button
+        type="submit"
+      >
+        EDIT
+      </button>
+    </div>
+  </form>
+</section>
+`;
