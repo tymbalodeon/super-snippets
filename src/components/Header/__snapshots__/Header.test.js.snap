@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders the UI as expected 1`] = `
+<nav
+  className="Header"
+>
+  <h1>
+    <a
+      href="/snippets"
+      onClick={[Function]}
+    >
+      <span
+        className="brackets"
+      >
+        { 
+      </span>
+      <span
+        className="super"
+      >
+        Super
+      </span>
+      <span
+        className="snippets"
+      >
+        Snippets
+      </span>
+      <span
+        className="brackets"
+      >
+         }
+      </span>
+    </a>
+  </h1>
+  <div
+    className="Header__not-logged-in"
+  >
+    <a
+      href="/login"
+      onClick={[Function]}
+    >
+      Log in
+    </a>
+    <a
+      href="/register"
+      onClick={[Function]}
+    >
+      Register
+    </a>
+  </div>
+</nav>
+`;

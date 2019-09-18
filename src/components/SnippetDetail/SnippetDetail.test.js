@@ -1,0 +1,33 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
+import { BrowserRouter } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
+import SnippetDetail from './SnippetDetail';
+
+describe.skip('<SnippetDetail />', () => {
+  const history = createMemoryHistory('/');
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+
+    ReactDOM.render(
+      <BrowserRouter>
+        <SnippetDetail history={history} />
+      </BrowserRouter>,
+      div
+    );
+
+    ReactDOM.unmountComponentAtNode(div);
+  });
+
+  it('renders the UI as expected', () => {
+    const tree = renderer
+      .create(
+        <BrowserRouter>
+          <SnippetDetail history={history} />
+        </BrowserRouter>
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

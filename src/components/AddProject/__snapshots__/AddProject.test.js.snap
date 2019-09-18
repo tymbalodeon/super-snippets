@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddProject /> renders the UI as expected 1`] = `
+<section
+  className="AddProject"
+>
+  <h2>
+    Create a project
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="project-name-input"
+      >
+        Name: 
+      </label>
+      <input
+        id="project-name-input"
+        name="title"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="buttons"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <button>
+          BACK
+        </button>
+      </a>
+      <button
+        type="submit"
+      >
+        ADD
+      </button>
+    </div>
+  </form>
+</section>
+`;

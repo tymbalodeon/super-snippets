@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Snippet /> renders the UI as expected 1`] = `
+<div
+  className="Snippet_wrapper"
+>
+  <a
+    href="/snippets/1"
+    onClick={[Function]}
+  >
+    <div
+      className="Snippet__details"
+    >
+      <div
+        className="Snippet__text"
+      >
+        <h2
+          className="Snippet__heading"
+        />
+        <p
+          className="Snippet__description"
+        >
+          testing stuff
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+`;
