@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SnippetApiService from '../../services/snippet-api-service.js';
+import SnippetApiService from '../../services/snippet-api-service';
 import './AddProject.css';
 
 export default class AddProject extends Component {

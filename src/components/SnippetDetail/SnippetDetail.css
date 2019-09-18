@@ -40,3 +40,7 @@
   background-color: #cbccc6;
   border-color: #cbccc6;
 }
+
+.Snippet__detail__wrapper {
+  width: 100%;
+}
