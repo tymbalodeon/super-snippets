@@ -6,9 +6,11 @@ export default class List extends Component {
   renderSnippets() {
     const { snippets, project_id, updateSnippetId } = this.props;
     let finalList = snippets;
+
     if (project_id) {
       finalList = snippets.filter(snippet => snippet.project_id === project_id);
     }
+
     return finalList.map(snippet => (
       <Snippet
         key={snippet.id}

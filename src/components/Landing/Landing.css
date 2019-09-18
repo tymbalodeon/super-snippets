@@ -1,3 +1,13 @@
 .Landing > h2 {
+  color: #5ccfe6;
   text-align: center;
+}
+
+.Landing > p {
+  color: #bae67e;
+}
+
+.Landing > p > a {
+  color: #95e6cb;
+  font-style: italic;
 }

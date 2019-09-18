@@ -4,11 +4,16 @@
 }
 
 .AddProject * > button {
-  background-color: #ffa759;
   margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   padding: 5px;
 }
 
 .AddProject > h2 {
   color: #5ccfe6;
+}
+
+.AddProject * > button[type='submit'] {
+  background-color: #ffa759;
 }

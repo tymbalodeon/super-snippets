@@ -12,6 +12,8 @@ class Header extends Component {
   renderLogoutLink() {
     return (
       <div className="Header__logged-in">
+        <Link to="/">Home</Link>
+        <Link to="/snippets">Snippets</Link>
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>

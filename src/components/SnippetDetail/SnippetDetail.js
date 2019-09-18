@@ -39,7 +39,7 @@ export default class SnippetDetail extends Component {
         <div className="button-flex">
           <button className="button-detail-back">
             <Link to="#" onClick={this.props.history.goBack}>
-              Back
+              BACK
             </Link>
           </button>
           <button className="button-detail-edit">
@@ -51,12 +51,12 @@ export default class SnippetDetail extends Component {
                 }
               }}
             >
-              Edit
+              EDIT
             </Link>
           </button>
-          <button className="button-detail-play">PLAY!</button>
+          <button className="button-detail-play">PLAY</button>
           <button className="button-detail-delete" onClick={this.handleDelete}>
-            Delete
+            DELETE
           </button>
         </div>
       </div>

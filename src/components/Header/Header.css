@@ -5,9 +5,6 @@
 .Header__not-logged-in > a,
 .Header__logged-in > a {
   color: #d4bfff;
-}
-
-.Header__not-logged-in > a {
   padding: 10px;
 }
 

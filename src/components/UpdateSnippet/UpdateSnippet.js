@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import SnippetApiService from '../../services/snippet-api-service';
 
 export default class UpdateSnippet extends Component {
@@ -78,7 +79,10 @@ export default class UpdateSnippet extends Component {
             </select>
           </div>
           <div className="buttons">
-            <button type="submit">Edit snippet</button>
+            <Link to="#" onClick={this.props.history.goBack}>
+              <button>BACK</button>
+            </Link>
+            <button type="submit">EDIT</button>
           </div>
         </form>
       </section>

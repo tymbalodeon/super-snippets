@@ -1,5 +1,10 @@
+.Snippet__text > h2,
+.Snippet__text > p {
+  text-align: center;
+}
+
 .Snippet__info {
-  color: #cbccc6;
+  color: #bae67e;
 }
 
 .code {
@@ -27,8 +32,8 @@
 }
 
 .button-detail-edit {
-  background-color: #cbccc6;
-  border-color: #cbccc6;
+  background-color: #ffa759;
+  border-color: #ffa759;
 }
 
 .button-detail-back {

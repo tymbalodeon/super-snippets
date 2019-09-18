@@ -10,10 +10,25 @@ export default class NotFoundPage extends Component {
         {loggedIn ? '' : <p>Please Login or Register above.</p>}
         <p className="landing-p">
           This is a place to sketch, store, and organize musical ideas in the
-          form of audio and notation, using SuperCollider and LilyPond,
-          respectively. Sketch out your ideas, put them in a project folder, tag
-          them by category, hit play to hear what they sound like, or engrave to
-          see what it looks like!
+          form of audio and notation, using{' '}
+          <a
+            href="https://supercollider.github.io/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            SuperCollider
+          </a>{' '}
+          and{' '}
+          <a
+            href="http://lilypond.org/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            LilyPond
+          </a>
+          , respectively. Sketch out your ideas, put them in a project folder,
+          tag them by category, hit play to hear what they sound like, or
+          engrave to see what it looks like!
         </p>
       </section>
     );

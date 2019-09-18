@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import SnippetApiService from '../../services/snippet-api-service';
 import './AddSnippet.css';
 
@@ -64,6 +65,9 @@ export default class AddSnippet extends Component {
             </select>
           </div>
           <div className="buttons">
+            <Link to="#" onClick={this.props.history.goBack}>
+              <button>BACK</button>
+            </Link>
             <button type="submit">ADD</button>
           </div>
         </form>

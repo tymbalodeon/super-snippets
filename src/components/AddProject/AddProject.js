@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import SnippetApiService from '../../services/snippet-api-service.js';
 import './AddProject.css';
 
@@ -25,7 +26,10 @@ export default class AddProject extends Component {
             <input type="text" id="project-name-input" name="title" required />
           </div>
           <div className="buttons">
-            <button type="submit">Add project</button>
+            <Link to="#" onClick={this.props.history.goBack}>
+              <button>BACK</button>
+            </Link>
+            <button type="submit">ADD</button>
           </div>
         </form>
       </section>

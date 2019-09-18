@@ -1,10 +1,7 @@
-.AddSnippet {
-  margin-top: 50px;
-}
-
 .AddSnippet * > button {
-  background-color: #ffa759;
   margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   padding: 5px;
 }
 
@@ -15,14 +12,18 @@
 
 input,
 textarea {
+  width: 100%;
   font-size: 16px;
 }
 
 textarea {
-  width: 75%;
-  height: 300px;
+  height: 200px;
 }
 
 .buttons {
   text-align: center;
+}
+
+.AddSnippet * > button[type='submit'] {
+  background-color: #ffa759;
 }

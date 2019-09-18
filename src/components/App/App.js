@@ -20,7 +20,13 @@ export default class App extends Component {
     error: null
   };
 
-  updateProjectId = project_id => this.setState({ project_id });
+  updateProjectId = project_id => {
+    if (project_id === '--Choose A Project--') {
+      this.setState({ project_id: null });
+    } else {
+      this.setState({ project_id: Number(project_id) });
+    }
+  };
 
   setProjects = projects => this.setState({ projects });
 
@@ -50,13 +56,8 @@ export default class App extends Component {
         <main className="App__main">
           <div className="App__projects">
             <Route
-              path={[
-                '/snippets',
-                '/projects',
-                '/add-snippet',
-                '/add-project',
-                '/update'
-              ]}
+              exact
+              path="/snippets"
               render={rprops => (
                 <ProjectList
                   {...rprops}
@@ -104,7 +105,9 @@ export default class App extends Component {
           />
           <Route
             path="/add-project"
-            render={() => <AddProject addProject={this.addProject} />}
+            render={rprops => (
+              <AddProject {...rprops} addProject={this.addProject} />
+            )}
           />
           <Route
             path="/add-snippet"

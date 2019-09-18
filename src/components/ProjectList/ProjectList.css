@@ -1,43 +1,17 @@
 .ProjectList__add-button {
   padding: 5px;
-  margin-top: 20px;
   margin-left: 5px;
   margin-right: 5px;
   background-color: #cbccc6;
-  text-transform: uppercase;
   color: #1f2430;
   font-size: 12px;
   width: 120px;
 }
 
-.ProjectList__add-button > a,
-.ProjectList__add-button > a:visited {
-  text-decoration: none;
-  color: #1f2430;
-  font-size: 14px;
-}
-
-.ProjectList__button-wrapper {
+.ProjectList {
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-  margin: 0;
-}
-
-.ProjectList__project-link {
-  color: #bae67e;
-}
-
-li {
-  padding: 5px;
-  text-transform: uppercase;
-}
-
-.active {
-  background-color: #cbccc6;
-  color: #1f2430;
+select {
+  margin-bottom: 20px;
 }

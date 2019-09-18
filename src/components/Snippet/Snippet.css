@@ -2,6 +2,10 @@
   text-decoration: none;
 }
 
-.Snippet__details {
+.Snippet__details h2 {
   color: #5ccfe6;
+}
+
+.Snippet__text p {
+  color: #bae67e;
 }
