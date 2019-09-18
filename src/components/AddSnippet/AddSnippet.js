@@ -66,7 +66,7 @@ export default class AddSnippet extends Component {
           </div>
           <div className="buttons">
             <Link to="#" onClick={this.props.history.goBack}>
-              <button>BACK</button>
+              <button className="back">BACK</button>
             </Link>
             <button type="submit">ADD</button>
           </div>

@@ -90,7 +90,9 @@ exports[`<AddSnippet /> renders the UI as expected 1`] = `
         href="/"
         onClick={[Function]}
       >
-        <button>
+        <button
+          className="back"
+        >
           BACK
         </button>
       </a>

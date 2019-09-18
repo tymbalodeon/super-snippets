@@ -7,6 +7,12 @@ import SnippetDetail from './SnippetDetail';
 
 describe.skip('<SnippetDetail />', () => {
   const history = createMemoryHistory('/');
+  const match = {
+    params: {
+      snippet_id: 1
+    }
+  };
+
   it('renders without crashing', () => {
     const div = document.createElement('div');
 

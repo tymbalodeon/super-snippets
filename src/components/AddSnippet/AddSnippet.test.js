@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer';
 import AddSnippet from './AddSnippet';
 import testSeed from '../../test-seed';
 
-describe.skip('<AddSnippet />', () => {
+describe('<AddSnippet />', () => {
   const history = createMemoryHistory('/');
   const projects = testSeed.makeProjects();
 
@@ -15,7 +15,7 @@ describe.skip('<AddSnippet />', () => {
 
     ReactDOM.render(
       <BrowserRouter>
-        <AddSnippet history={history} />
+        <AddSnippet history={history} projects={projects} />
       </BrowserRouter>,
       div
     );
