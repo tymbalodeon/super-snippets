@@ -62,6 +62,16 @@ const SnippetApiService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
+  putSnippet(snippet, snippet_id) {
+    return fetch(`${config.API_ENDPOINT}/snippets/${snippet_id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify(snippet)
+    }).then(res => (!res.ok ? res.json().then(e => Promise.reject(e)) : res));
+  },
   deleteSnippet(snippet_id) {
     return fetch(`${config.API_ENDPOINT}/snippets/${snippet_id}`, {
       method: 'DELETE',

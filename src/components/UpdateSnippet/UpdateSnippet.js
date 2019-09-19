@@ -6,24 +6,28 @@ export default class UpdateSnippet extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { title, info, content, project_id } = e.target;
+    const { snippet } = this.props.location.state;
+
     const updatedSnippet = {
       title: title.value,
       info: info.value,
       content: content.value,
-      project_id: project_id.value
+      project_id: project_id.value,
+      date_created: snippet.date_created
     };
-    const { addSnippet } = this.props;
-    let id;
-    SnippetApiService.postSnippet(updatedSnippet)
-      .then(res => (id = res.id))
-      .then(addSnippet)
+
+    const { updateSnippet } = this.props;
+    const idToPut = snippet.id;
+
+    SnippetApiService.putSnippet(updatedSnippet, idToPut)
+      .then(updateSnippet)
       .then(() => {
         title.value = '';
         info.value = '';
         content.value = '';
         project_id.value = null;
       })
-      .then(() => this.props.history.push(`/snippets/${id}`))
+      .then(() => this.props.history.push(`/snippets/${idToPut}`))
       .catch();
   };
 

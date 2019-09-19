@@ -36,9 +36,9 @@ exports[`<UpdateSnippet /> renders the UI as expected 1`] = `
         Description
       </label>
       <input
+        defaultValue="testing stuff"
         id="snippet-info-input"
         name="info"
-        placeholder="testing stuff"
         type="text"
       />
     </div>
@@ -51,9 +51,9 @@ exports[`<UpdateSnippet /> renders the UI as expected 1`] = `
         Content
       </label>
       <textarea
+        defaultValue="test content"
         id="snippet-content-input"
         name="content"
-        placeholder="test content"
       />
     </div>
     <div

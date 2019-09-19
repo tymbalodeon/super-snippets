@@ -40,6 +40,14 @@ export default class App extends Component {
     this.setSnippets([...this.state.snippets, snippet]);
   };
 
+  updateSnippet = newSnippet => {
+    const { snippets } = this.state;
+    const oldSnippet = snippets.find(snippet => snippet.id === newSnippet.id);
+    const index = snippets.indexOf(oldSnippet);
+    snippets[index] = newSnippet;
+    this.setSnippets(snippets);
+  };
+
   render() {
     const { snippets, projects, project_id } = this.state;
     return (
@@ -126,7 +134,7 @@ export default class App extends Component {
             render={rprops => (
               <UpdateSnippet
                 {...rprops}
-                addSnippet={this.addSnippet}
+                updateSnippet={this.updateSnippet}
                 projects={projects}
                 setProjects={this.setProjects}
               />
