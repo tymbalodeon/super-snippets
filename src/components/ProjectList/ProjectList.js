@@ -4,18 +4,22 @@ import SnippetApiService from '../../services/snippet-api-service';
 import './ProjectList.css';
 
 export default class ProjectList extends Component {
+  state = {
+    project_id: this.props.project_id || ''
+  };
+
   renderProjects() {
     const { projects, updateProjectId } = this.props;
     return (
       <div className="project-list-wrapper">
-        <label htmlFor="snippet-project-select">Project: </label>
+        <label htmlFor="snippet-project-select">Filter by Project: </label>
         <select
           id="snippet-project-select"
           name="project_id"
           onChange={e => updateProjectId(e.target.value)}
         >
-          <option key="0" value={null}>
-            --Choose A Project--
+          <option key="0" value={''}>
+            --DISPLAY ALL--
           </option>
           {projects.map(project => (
             <option key={project.id} value={project.id}>

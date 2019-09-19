@@ -16,6 +16,7 @@
 
 .AddProject * > button[type='submit'] {
   background-color: #ffa759;
+  border-color: #ffa759;
 }
 
 .back {

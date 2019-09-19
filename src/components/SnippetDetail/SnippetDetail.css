@@ -24,21 +24,25 @@
 .button-detail-delete {
   background-color: #ff3333;
   border-color: #ff3333;
+  color: #cbccc6;
 }
 
 .button-detail-play {
   background-color: #bae67e;
   border-color: #bae67e;
+  color: #1f2430;
 }
 
 .button-detail-edit {
   background-color: #ffa759;
   border-color: #ffa759;
+  color: #1f2430;
 }
 
 .button-detail-back {
   background-color: #cbccc6;
   border-color: #cbccc6;
+  color: #1f2430;
 }
 
 .Snippet__detail__wrapper {

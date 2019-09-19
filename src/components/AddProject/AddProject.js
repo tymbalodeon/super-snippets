@@ -13,6 +13,7 @@ export default class AddProject extends Component {
       .then(() => {
         title.value = '';
       })
+      .then(this.props.history.push('/snippets'))
       .catch(error => this.setState({ error }));
   };
 

@@ -21,7 +21,7 @@ export default class App extends Component {
   };
 
   updateProjectId = project_id => {
-    if (project_id === '--Choose A Project--') {
+    if (project_id == null || project_id === '--DISPLAY ALL--') {
       this.setState({ project_id: null });
     } else {
       this.setState({ project_id: Number(project_id) });
@@ -65,6 +65,7 @@ export default class App extends Component {
                   updateProjectId={this.updateProjectId}
                   setProjects={this.setProjects}
                   setSnippets={this.setSnippets}
+                  project_id={project_id}
                 />
               )}
             />

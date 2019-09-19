@@ -26,4 +26,5 @@ textarea {
 
 .AddSnippet * > button[type='submit'] {
   background-color: #ffa759;
+  border-color: #ffa759;
 }

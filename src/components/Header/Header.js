@@ -10,10 +10,13 @@ class Header extends Component {
   };
 
   renderLogoutLink() {
+    const { updateProjectId } = this.props;
     return (
       <div className="Header__logged-in">
         <Link to="/">Home</Link>
-        <Link to="/snippets">Snippets</Link>
+        <Link to="/snippets" onClick={updateProjectId}>
+          Snippets
+        </Link>
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
@@ -37,7 +40,7 @@ class Header extends Component {
       <>
         <nav className="Header">
           <h1>
-            <Link to="/snippets" onClick={() => updateProjectId()}>
+            <Link to="/snippets" onClick={updateProjectId}>
               <span className="brackets">{'{ '}</span>
               <span className="super">Super</span>
               <span className="snippets">Snippets</span>

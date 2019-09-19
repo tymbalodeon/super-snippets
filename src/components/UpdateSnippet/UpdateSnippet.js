@@ -47,7 +47,7 @@ export default class UpdateSnippet extends Component {
               type="text"
               id="snippet-name-input"
               name="title"
-              placeholder={snippet.snippet_name}
+              defaultValue={snippet.snippet_name}
             />
           </div>
           <div className="field">
@@ -56,7 +56,7 @@ export default class UpdateSnippet extends Component {
               type="text"
               id="snippet-info-input"
               name="info"
-              placeholder={snippet.info}
+              defaultValue={snippet.info}
             />
           </div>
           <div className="field">
@@ -64,7 +64,7 @@ export default class UpdateSnippet extends Component {
             <textarea
               id="snippet-content-input"
               name="content"
-              placeholder={snippet.content}
+              defaultValue={snippet.content}
             />
           </div>
           <div className="field">
