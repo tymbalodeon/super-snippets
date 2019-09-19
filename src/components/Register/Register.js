@@ -6,7 +6,7 @@ export default class Register extends Component {
   state = { error: null };
 
   validatePassword = password => {
-    const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]/;
+    const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&])[\S]/;
     if (password.length < 8) {
       return 'Password must be longer than 8 characters';
     }

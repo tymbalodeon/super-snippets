@@ -28,7 +28,9 @@ export default class AddProject extends Component {
           </div>
           <div className="buttons">
             <Link to="#" onClick={this.props.history.goBack}>
-              <button className="back">BACK</button>
+              <button type="button" className="back">
+                BACK
+              </button>
             </Link>
             <button type="submit">ADD</button>
           </div>

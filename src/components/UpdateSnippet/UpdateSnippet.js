@@ -83,7 +83,12 @@ export default class UpdateSnippet extends Component {
             </select>
           </div>
           <div className="buttons">
-            <Link to="#" onClick={this.props.history.goBack}>
+            <Link
+              to="#"
+              onClick={() =>
+                this.props.history.replace(`/snippets/${snippet.id}`)
+              }
+            >
               <button>BACK</button>
             </Link>
             <button type="submit">EDIT</button>

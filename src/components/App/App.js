@@ -16,13 +16,13 @@ export default class App extends Component {
   state = {
     snippets: [],
     projects: [],
-    project_id: null,
+    project_id: '',
     error: null
   };
 
   updateProjectId = project_id => {
-    if (project_id == null || project_id === '--DISPLAY ALL--') {
-      this.setState({ project_id: null });
+    if (project_id === '') {
+      this.setState({ project_id: '' });
     } else {
       this.setState({ project_id: Number(project_id) });
     }
@@ -38,14 +38,6 @@ export default class App extends Component {
 
   addSnippet = snippet => {
     this.setSnippets([...this.state.snippets, snippet]);
-  };
-
-  updateSnippet = newSnippet => {
-    const { snippets } = this.state;
-    const oldSnippet = snippets.find(snippet => snippet.id === newSnippet.id);
-    const index = snippets.indexOf(oldSnippet);
-    snippets[index] = newSnippet;
-    this.setSnippets(snippets);
   };
 
   render() {
@@ -134,7 +126,6 @@ export default class App extends Component {
             render={rprops => (
               <UpdateSnippet
                 {...rprops}
-                updateSnippet={this.updateSnippet}
                 projects={projects}
                 setProjects={this.setProjects}
               />

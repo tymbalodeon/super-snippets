@@ -92,6 +92,7 @@ exports[`<AddSnippet /> renders the UI as expected 1`] = `
       >
         <button
           className="back"
+          type="button"
         >
           BACK
         </button>
