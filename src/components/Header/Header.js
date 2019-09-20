@@ -36,7 +36,7 @@ class Header extends Component {
       <>
         <nav className="Header">
           <h1>
-            <Link to="/snippets">
+            <Link to={loggedIn ? '/snippets' : '/'}>
               <span className="brackets">{'{ '}</span>
               <span className="super">Super</span>
               <span className="snippets">Snippets</span>

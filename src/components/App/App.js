@@ -10,6 +10,8 @@ import Landing from '../Landing/Landing';
 import AddProject from '../AddProject/AddProject';
 import AddSnippet from '../AddSnippet/AddSnippet';
 import UpdateSnippet from '../UpdateSnippet/UpdateSnippet';
+// import PrivateOnlyRoute from '../Utils/PrivateOnlyRoute';
+// import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import './App.css';
 
 export default class App extends Component {
@@ -71,7 +73,6 @@ export default class App extends Component {
             />
           </div>
           <Route exact path="/" render={() => <Landing />} />
-
           <Route
             path={'/login'}
             render={rprops => <Login {...rprops} logIn={this.logIn} />}
