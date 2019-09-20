@@ -10,7 +10,7 @@ import Landing from '../Landing/Landing';
 import AddProject from '../AddProject/AddProject';
 import AddSnippet from '../AddSnippet/AddSnippet';
 import UpdateSnippet from '../UpdateSnippet/UpdateSnippet';
-// import PrivateOnlyRoute from '../Utils/PrivateOnlyRoute';
+// import Route from '../Utils/Route';
 // import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import './App.css';
 
@@ -42,9 +42,13 @@ export default class App extends Component {
     this.setSnippets([...this.state.snippets, snippet]);
   };
 
-  deleteSnippet = id => {
-    const filtered = this.state.snippets.filter(snippet => snippet.id !== id);
-    this.setSnippets(filtered);
+  deleteSnippet = (id, history) => {
+    this.setState(
+      {
+        snippets: this.state.snippets.filter(snippet => snippet.id !== id)
+      },
+      () => history.push('/snippets')
+    );
   };
 
   render() {

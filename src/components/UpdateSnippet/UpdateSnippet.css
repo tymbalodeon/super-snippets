@@ -1,0 +1,22 @@
+.UpdateSnippet * > textarea,
+input,
+select {
+  background: #cbccc6;
+  color: #1f2430;
+}
+
+.UpdateSnippet * > button[type='submit'] {
+  background-color: #ffa759;
+  border-color: #ffa759;
+}
+
+button {
+  margin: 10px;
+  padding: 5px;
+  color: #1f2430;
+}
+
+.button-back {
+  background-color: #cbccc6;
+  border-color: #cbccc6;
+}

@@ -3,11 +3,30 @@
   text-align: center;
 }
 
-.Landing > p {
+.landing-p {
   color: #bae67e;
 }
 
-.Landing > p > a {
+.landing-p > a {
   color: #95e6cb;
   font-style: italic;
+}
+
+.test,
+.please-login {
+  color: #cbccc6;
+  text-align: center;
+}
+
+.please-login,
+.test-text {
+  font-style: italic;
+}
+
+.demo {
+  color: #ffd580;
+}
+
+.test {
+  margin-top: 50px;
 }

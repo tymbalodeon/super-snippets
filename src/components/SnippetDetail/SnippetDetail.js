@@ -11,10 +11,9 @@ export default class SnippetDetail extends Component {
 
   handleDelete = () => {
     const idToDelete = this.props.match.params.snippet_id;
-    const { deleteSnippet } = this.props;
-    SnippetApiService.deleteSnippet(idToDelete)
-      .then(deleteSnippet(idToDelete))
-      .then(this.props.history.push('/snippets'));
+    SnippetApiService.deleteSnippet(idToDelete).then(
+      this.props.deleteSnippet(idToDelete, this.props.history)
+    );
   };
 
   componentDidMount() {

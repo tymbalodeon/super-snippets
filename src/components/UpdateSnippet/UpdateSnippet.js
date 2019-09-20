@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SnippetApiService from '../../services/snippet-api-service';
+import './UpdateSnippet.css';
 
 export default class UpdateSnippet extends Component {
   handleSubmit = e => {
@@ -41,7 +42,7 @@ export default class UpdateSnippet extends Component {
     const { snippet } = this.props.location.state;
     const { projects, error } = this.props;
     return (
-      <section className="AddSnippet">
+      <section className="UpdateSnippet">
         <h2>Edit Snippet</h2>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <form onSubmit={this.handleSubmit}>
@@ -94,7 +95,7 @@ export default class UpdateSnippet extends Component {
                 this.props.history.replace(`/snippets/${snippet.id}`)
               }
             >
-              <button>BACK</button>
+              <button className="button-back">BACK</button>
             </Link>
             <button type="submit">SUBMIT</button>
           </div>

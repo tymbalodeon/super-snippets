@@ -21,7 +21,8 @@ a {
 }
 
 @media screen and (min-width: 400px) {
-  .App__main {
+  .App__main,
+  .Header {
     width: 90%;
     margin: 0 auto;
   }
@@ -31,20 +32,23 @@ a {
 }
 
 @media screen and (min-width: 600px) {
-  .App__main {
-    width: 90%;
+  .App__main,
+  .Header {
+    width: 80%;
     margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 800px) {
-  .App__main {
+  .App__main,
+  .Header {
     width: 75%;
   }
 }
 
 @media screen and (min-width: 900px) {
-  .App__main {
+  .App__main,
+  .Header {
     width: 60%;
   }
 }

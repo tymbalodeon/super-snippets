@@ -24,7 +24,7 @@
 @media screen and (min-width: 600px) {
   .Header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
 }

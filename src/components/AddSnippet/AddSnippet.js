@@ -9,18 +9,17 @@ export default class AddSnippet extends Component {
   };
 
   validateSubmit = newSnippet => {
-    const { title, content } = newSnippet;
-    const required = { title, content };
+    const { title, info, content } = newSnippet;
+    const required = { title, info, content };
 
     if (!required.title) return 'Please include a name';
-
-    if (!required.content) {
-      return 'Please include some content';
-    }
+    if (!required.info) return 'Please include a description';
+    if (!required.content) return 'Please include some content';
   };
 
   handleSubmit = e => {
     e.preventDefault();
+
     const { title, info, content, project_id } = e.target;
     const newSnippet = {
       title: title.value,
@@ -28,29 +27,34 @@ export default class AddSnippet extends Component {
       content: content.value,
       project_id: project_id.value
     };
+
     const error = this.validateSubmit(newSnippet);
     if (error) {
       return this.setState({ error });
     }
+
     const { addSnippet } = this.props;
-    let id;
+
     SnippetApiService.postSnippet(newSnippet)
-      .then(res => (id = res.id))
-      .then(addSnippet)
-      .then(() => {
+      .then(res => {
+        addSnippet(res);
+        return res.id;
+      })
+      .then(id => {
         title.value = '';
         info.value = '';
         content.value = '';
         project_id.value = '';
+        return id;
       })
-      .then(() => this.props.history.push(`/snippets/${id}`))
+      .then(id => this.props.history.push(`/snippets/${id}`))
       .catch();
   };
 
   componentDidMount() {
     SnippetApiService.getProjects()
       .then(res => this.props.setProjects(res))
-      .catch(error => this.setState({ error }));
+      .catch(error => this.setState(error));
   }
 
   render() {
