@@ -14,7 +14,7 @@ Currently, users can:
 - Edit snippets
 - Create projects to organize snippets
 - View snippets with optional filter by projects
-- Delet Snippets
+- Delete Snippets
 - Logout
 
 The goal is that snippets could eventually be run in the browser, perhaps using SuperCollider to generate sound or LilyPond to generate music notation in pdf form, maybe even connecting the two: for example, generating random patterns with SuperCollider functions that get engraved through LilyPond.
