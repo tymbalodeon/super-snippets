@@ -12,7 +12,7 @@ exports[`<Snippet /> renders the UI as expected 1`] = `
       className="Snippet__details"
     >
       <div
-        className="Snippet__text"
+        className="Snippet__text_small"
       >
         <h2
           className="Snippet__heading"

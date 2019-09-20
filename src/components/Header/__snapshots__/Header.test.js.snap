@@ -6,7 +6,7 @@ exports[`<Header /> renders the UI as expected 1`] = `
 >
   <h1>
     <a
-      href="/snippets"
+      href="/"
       onClick={[Function]}
     >
       <span

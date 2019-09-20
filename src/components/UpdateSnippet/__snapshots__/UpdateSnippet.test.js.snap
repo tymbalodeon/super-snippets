@@ -2,7 +2,7 @@
 
 exports[`<UpdateSnippet /> renders the UI as expected 1`] = `
 <section
-  className="AddSnippet"
+  className="UpdateSnippet"
 >
   <h2>
     Edit Snippet
@@ -26,6 +26,37 @@ exports[`<UpdateSnippet /> renders the UI as expected 1`] = `
         name="title"
         type="text"
       />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="snippet-project-select"
+      >
+        Project
+      </label>
+      <select
+        id="snippet-project-select"
+        name="project_id"
+      >
+        <option
+          value={null}
+        >
+          --Choose A Project--
+        </option>
+        <option
+          selected={false}
+          value={1}
+        >
+          Project with Live Trumpet
+        </option>
+        <option
+          selected={false}
+          value={2}
+        >
+          Example
+        </option>
+      </select>
     </div>
     <div
       className="field"
@@ -57,49 +88,22 @@ exports[`<UpdateSnippet /> renders the UI as expected 1`] = `
       />
     </div>
     <div
-      className="field"
-    >
-      <label
-        htmlFor="snippet-project-select"
-      >
-        Project
-      </label>
-      <select
-        id="snippet-project-select"
-        name="project_id"
-      >
-        <option
-          value={null}
-        >
-          --Choose A Project--
-        </option>
-        <option
-          value={1}
-        >
-          Project with Live Trumpet
-        </option>
-        <option
-          value={2}
-        >
-          Example
-        </option>
-      </select>
-    </div>
-    <div
       className="buttons"
     >
       <a
         href="/"
         onClick={[Function]}
       >
-        <button>
+        <button
+          className="button-back"
+        >
           BACK
         </button>
       </a>
       <button
         type="submit"
       >
-        EDIT
+        SUBMIT
       </button>
     </div>
   </form>
