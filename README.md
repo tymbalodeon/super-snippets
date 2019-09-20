@@ -1,6 +1,6 @@
 # SuperSnippets
 
-View the live app at: [https://super-snippets.benjaminjrosen.now.sh/]
+View the [Live App](https://super-snippets.benjaminjrosen.now.sh/)
 
 ## Summary
 
@@ -18,6 +18,12 @@ Currently, users can:
 - Logout
 
 The goal is that snippets could eventually be run in the browser, perhaps using SuperCollider to generate sound or LilyPond to generate music notation in pdf form, maybe even connecting the two: for example, generating random patterns with SuperCollider functions that get engraved through LilyPond.
+
+## Screenshots
+
+![Snippet List](https://github.com/tymbalodeon/super-snippets/blob/master/assets/snippets.png)
+
+![Snippet Detail](https://github.com/tymbalodeon/super-snippets/blob/master/assets/snippet.png)
 
 ## Technology Used
 
