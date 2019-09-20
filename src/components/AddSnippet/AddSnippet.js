@@ -12,13 +12,11 @@ export default class AddSnippet extends Component {
     const { title, content } = newSnippet;
     const required = { title, content };
 
-    if (!required.title || !required.content) {
-      return 'Please fill out required fields';
+    if (!required.title) return 'Please include a name';
+
+    if (!required.content) {
+      return 'Please include some content';
     }
-    // for (const [key, value] of Object.entries(required)) {
-    //   if (value == null)
-    //     return this.setState({ error: `Missing '${key}' in request body` });
-    // }
   };
 
   handleSubmit = e => {
@@ -30,10 +28,10 @@ export default class AddSnippet extends Component {
       content: content.value,
       project_id: project_id.value
     };
-    // const error = this.validateSubmit(newSnippet);
-    // if (error) {
-    //   return this.setState({ error });
-    // }
+    const error = this.validateSubmit(newSnippet);
+    if (error) {
+      return this.setState({ error });
+    }
     const { addSnippet } = this.props;
     let id;
     SnippetApiService.postSnippet(newSnippet)
@@ -43,7 +41,7 @@ export default class AddSnippet extends Component {
         title.value = '';
         info.value = '';
         content.value = '';
-        project_id.value = null;
+        project_id.value = '';
       })
       .then(() => this.props.history.push(`/snippets/${id}`))
       .catch();
