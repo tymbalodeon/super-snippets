@@ -8,7 +8,8 @@
 }
 
 .code {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
   white-space: pre;
 }
 
@@ -51,4 +52,9 @@
 
 .Snippet__detail__wrapper {
   width: 100%;
+}
+
+.Snippet__project {
+  color: #cbccc6;
+  font-style: italic;
 }

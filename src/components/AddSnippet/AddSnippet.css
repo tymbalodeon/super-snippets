@@ -28,3 +28,7 @@ textarea {
   background-color: #ffa759;
   border-color: #ffa759;
 }
+
+.error {
+  text-align: center;
+}

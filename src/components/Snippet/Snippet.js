@@ -9,7 +9,7 @@ export default class Snippet extends Component {
       <div className="Snippet_wrapper">
         <Link to={`/snippets/${snippet.id}`}>
           <div className="Snippet__details">
-            <div className="Snippet__text">
+            <div className="Snippet__text_small">
               <h2 className="Snippet__heading">{snippet.snippet_name}</h2>
               <p className="Snippet__description">{snippet.info}</p>
             </div>

@@ -1,11 +1,11 @@
-.Snippet_wrapper a {
+.Snippet_wrapper > a {
   text-decoration: none;
 }
 
-.Snippet__details h2 {
+h2 {
   color: #5ccfe6;
 }
 
-.Snippet__text p {
+.Snippet__text_small > p {
   color: #bae67e;
 }

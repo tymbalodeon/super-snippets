@@ -42,6 +42,11 @@ export default class App extends Component {
     this.setSnippets([...this.state.snippets, snippet]);
   };
 
+  deleteSnippet = id => {
+    const filtered = this.state.snippets.filter(snippet => snippet.id !== id);
+    this.setSnippets(filtered);
+  };
+
   render() {
     const { snippets, projects, project_id } = this.state;
     return (
@@ -80,7 +85,9 @@ export default class App extends Component {
           <Route path={'/register'} component={Register} />
           <Route
             path="/snippets/:snippet_id"
-            render={rprops => <SnippetDetail {...rprops} />}
+            render={rprops => (
+              <SnippetDetail {...rprops} deleteSnippet={this.deleteSnippet} />
+            )}
           />
           <Route
             exact

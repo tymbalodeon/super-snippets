@@ -4,6 +4,23 @@ import SnippetApiService from '../../services/snippet-api-service';
 import './AddSnippet.css';
 
 export default class AddSnippet extends Component {
+  state = {
+    error: null
+  };
+
+  validateSubmit = newSnippet => {
+    const { title, content } = newSnippet;
+    const required = { title, content };
+
+    if (!required.title || !required.content) {
+      return 'Please fill out required fields';
+    }
+    // for (const [key, value] of Object.entries(required)) {
+    //   if (value == null)
+    //     return this.setState({ error: `Missing '${key}' in request body` });
+    // }
+  };
+
   handleSubmit = e => {
     e.preventDefault();
     const { title, info, content, project_id } = e.target;
@@ -13,6 +30,10 @@ export default class AddSnippet extends Component {
       content: content.value,
       project_id: project_id.value
     };
+    // const error = this.validateSubmit(newSnippet);
+    // if (error) {
+    //   return this.setState({ error });
+    // }
     const { addSnippet } = this.props;
     let id;
     SnippetApiService.postSnippet(newSnippet)
@@ -35,23 +56,16 @@ export default class AddSnippet extends Component {
   }
 
   render() {
-    const { projects, error } = this.props;
+    const { projects } = this.props;
+    const { error } = this.state;
     return (
       <section className="AddSnippet">
         <h2>Create a snippet</h2>
-        <div role="alert">{error && <p className="red">{error}</p>}</div>
+        <div role="alert">{error && <p className="error">{error}</p>}</div>
         <form onSubmit={this.handleSubmit}>
           <div className="field">
             <label htmlFor="snippet-name-input">Name: </label>
             <input type="text" id="snippet-name-input" name="title" />
-          </div>
-          <div className="field">
-            <label htmlFor="snippet-info-input">Description: </label>
-            <input type="text" id="snippet-info-input" name="info" />
-          </div>
-          <div className="field">
-            <label htmlFor="snippet-content-input">Content: </label>
-            <textarea id="snippet-content-input" name="content" />
           </div>
           <div className="field">
             <label htmlFor="snippet-project-select">Project: </label>
@@ -63,6 +77,14 @@ export default class AddSnippet extends Component {
                 </option>
               ))}
             </select>
+          </div>
+          <div className="field">
+            <label htmlFor="snippet-info-input">Description: </label>
+            <input type="text" id="snippet-info-input" name="info" />
+          </div>
+          <div className="field">
+            <label htmlFor="snippet-content-input">Content: </label>
+            <textarea id="snippet-content-input" name="content" />
           </div>
           <div className="buttons">
             <Link to="#" onClick={this.props.history.goBack}>

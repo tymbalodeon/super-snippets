@@ -34,8 +34,7 @@ export default class Register extends Component {
     const passwordError = this.validatePassword(password.value);
 
     if (passwordError) {
-      this.setState({ error: passwordError });
-      return;
+      return this.setState({ error: passwordError });
     }
 
     this.setState({ error: null });

@@ -55,6 +55,21 @@ export default class UpdateSnippet extends Component {
             />
           </div>
           <div className="field">
+            <label htmlFor="snippet-project-select">Project</label>
+            <select id="snippet-project-select" name="project_id">
+              <option value={null}>--Choose A Project--</option>
+              {projects.map(project => (
+                <option
+                  key={project.id}
+                  value={project.id}
+                  selected={snippet.project_id === project.id}
+                >
+                  {project.title}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="field">
             <label htmlFor="snippet-info-input">Description</label>
             <input
               type="text"
@@ -71,17 +86,7 @@ export default class UpdateSnippet extends Component {
               defaultValue={snippet.content}
             />
           </div>
-          <div className="field">
-            <label htmlFor="snippet-project-select">Project</label>
-            <select id="snippet-project-select" name="project_id">
-              <option value={null}>--Choose A Project--</option>
-              {projects.map(project => (
-                <option key={project.id} value={project.id}>
-                  {project.title}
-                </option>
-              ))}
-            </select>
-          </div>
+
           <div className="buttons">
             <Link
               to="#"
@@ -91,7 +96,7 @@ export default class UpdateSnippet extends Component {
             >
               <button>BACK</button>
             </Link>
-            <button type="submit">EDIT</button>
+            <button type="submit">SUBMIT</button>
           </div>
         </form>
       </section>
