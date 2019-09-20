@@ -5,6 +5,7 @@ View the [Live App](https://super-snippets.benjaminjrosen.now.sh/)
 ## API
 
 [GitHub Repo](https://github.com/tymbalodeon/super-snippets-api)
+
 [Heroku URL](https://desolate-anchorage-33266.herokuapp.com/api)
 
 ## Summary
