@@ -10,7 +10,6 @@ import Landing from '../Landing/Landing';
 import AddProject from '../AddProject/AddProject';
 import AddSnippet from '../AddSnippet/AddSnippet';
 import UpdateSnippet from '../UpdateSnippet/UpdateSnippet';
-import Favicon from 'react-favicon';
 // import Route from '../Utils/Route';
 // import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import './App.css';
@@ -56,7 +55,6 @@ export default class App extends Component {
     const { snippets, projects, project_id } = this.state;
     return (
       <div className="App">
-        <Favicon url="https://github.com/tymbalodeon/super-snippets/blob/master/public/favicon.ico" />
         <header>
           <Route
             path="/"
