@@ -16,7 +16,7 @@ export default class NotFoundPage extends Component {
           This is a place to sketch, store, organize, and share musical ideas.
           Currently, users can create snippets, edit them, delete them, tag them
           by project and view them (either all or by project).
-          {/* The goal is that
+          The goal is that
           snippets could eventually be run in the browser, perhaps using{' '}
           <a
             href="https://supercollider.github.io/"
@@ -33,7 +33,7 @@ export default class NotFoundPage extends Component {
           >
             LilyPond
           </a>{' '}
-          to generate music notation in pdf form. */}
+          to generate music notation in pdf form.
         </p>
         {loggedIn ? (
           ''
