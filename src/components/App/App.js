@@ -25,6 +25,8 @@ export default class App extends Component {
   updateProjectId = project_id => {
     if (project_id === '') {
       this.setState({ project_id: '' });
+    } else if (project_id === 'uncategorized') {
+      this.setState({ project_id: project_id });
     } else {
       this.setState({ project_id: Number(project_id) });
     }

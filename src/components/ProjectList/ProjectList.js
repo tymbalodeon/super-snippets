@@ -17,6 +17,13 @@ export default class ProjectList extends Component {
           <option key="0" value={''} selected={project_id === ''}>
             --DISPLAY ALL--
           </option>
+          <option
+            key="00"
+            value={'uncategorized'}
+            selected={project_id === 'uncategorized'}
+          >
+            --UNCATEGORIZED--
+          </option>
           {projects.map(project => (
             <option
               key={project.id}
