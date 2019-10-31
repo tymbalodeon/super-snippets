@@ -8,7 +8,13 @@ export default class List extends Component {
     let finalList = snippets;
 
     if (project_id) {
-      finalList = snippets.filter(snippet => snippet.project_id === project_id);
+      if (project_id === 'uncategorized') {
+        finalList = snippets.filter(snippet => !snippet.project_id);
+      } else {
+        finalList = snippets.filter(
+          snippet => snippet.project_id === project_id
+        );
+      }
     }
 
     return finalList.map(snippet => (

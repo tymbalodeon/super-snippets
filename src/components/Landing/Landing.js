@@ -15,7 +15,8 @@ export default class NotFoundPage extends Component {
         <p className="landing-p">
           This is a place to sketch, store, organize, and share musical ideas.
           Currently, users can create snippets, edit them, delete them, tag them
-          by project and view them (either all or by project). The goal is that
+          by project and view them (either all or by project).
+          The goal is that
           snippets could eventually be run in the browser, perhaps using{' '}
           <a
             href="https://supercollider.github.io/"
